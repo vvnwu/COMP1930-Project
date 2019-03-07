@@ -1,0 +1,69 @@
+{
+    "items" : {
+        "0":"item1",
+        "1":"item2",
+        "2":"item3"
+    },
+      "item1" : {
+        "brand" : "",
+        "colour" : "",
+        "image" : "",
+        "name" : "",
+        "price" : "",
+        "renter" : "",
+        "seller" : "",
+        "size" : "",
+        "style" : ""
+      },
+    "item2" : {
+        "brand" : "",
+        "colour" : "",
+        "image" : "",
+        "name" : "",
+        "price" : "",
+        "renter" : "",
+        "seller" : "",
+        "size" : "",
+        "style" : ""
+      },
+    "item3" : {
+        "brand" : "",
+        "colour" : "",
+        "image" : "",
+        "name" : "",
+        "price" : "",
+        "renter" : "",
+        "seller" : "",
+        "size" : "",
+        "style" : ""
+      },
+      "people" : {
+          "0" : "person1",
+          "1" : "person2",
+          "2" : "person3"
+      },
+      "person1" : {
+        "history" : "",
+        "lend" : "",
+        "name" : "",
+        "purchased" : "",
+        "rent" : "",
+        "selling" : ""
+      },
+     "person2" : {
+        "history" : "",
+        "lend" : "",
+        "name" : "",
+        "purchased" : "",
+        "rent" : "",
+        "selling" : ""
+      },
+     "person3" : {
+        "history" : "",
+        "lend" : "",
+        "name" : "",
+        "purchased" : "",
+        "rent" : "",
+        "selling" : ""
+      }
+}
