@@ -10,7 +10,7 @@
         "image" : "",
         "name" : "",
         "price" : "",
-        "renter" : "",
+        "lender" : "",
         "seller" : "",
         "size" : "",
         "style" : ""
@@ -21,7 +21,7 @@
         "image" : "",
         "name" : "",
         "price" : "",
-        "renter" : "",
+        "lender" : "",
         "seller" : "",
         "size" : "",
         "style" : ""
@@ -32,7 +32,7 @@
         "image" : "",
         "name" : "",
         "price" : "",
-        "renter" : "",
+        "lender" : "",
         "seller" : "",
         "size" : "",
         "style" : ""
@@ -56,7 +56,8 @@
         "name" : "",
         "purchased" : "",
         "rent" : "",
-        "selling" : ""
+        "selling" : "",
+        "picture" : "url(https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)"
       },
      "person3" : {
         "history" : "",
