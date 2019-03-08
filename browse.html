@@ -99,7 +99,7 @@
 				item[i] = document.createElement("img");
 				item[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
 				itemDescription[i] = document.createElement("figcaption");
-				itemDescription[i].innerHTML = "Item Description #" + (i+1);
+				itemDescription[i].innerText = "Item Description #" + (i+1);
 			}
 			document.body.appendChild(content);
 				content.appendChild(itemListingRow[0]);
@@ -116,16 +116,17 @@
 								figure[i].appendChild(item[i]);
 								figure[i].appendChild(itemDescription[i]);
 					}
+			
 			var itemData = [];
 			for (i = 0; i< 3 ; i++){
-			itemData[i] = firebase.database().ref().child( "item"+ (i +1) );
+			itemData[i] = firebase.database().ref().child("item" + (i + 1)).child("name");
 			itemData[i].on(
 				'value' ,
 
 				function(snap){
-						item[i].innerHTML = snap.val();
+						itemDescription[i].innerText = snap.val();
 				}
-		);
+			);
 			}
 
 	</script>
