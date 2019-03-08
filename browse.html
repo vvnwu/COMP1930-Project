@@ -81,58 +81,52 @@
 		</ul>
 	</aside>
 
-	<div class= "itemListingRow">
-		<div class= "itemListingCol">
-			<figure>
-				<img src="https://dummyimage.com/140x180/000/fff">
-				<figcaption> Item Description #1</figcaption>
-			</figure>
-		</div>
-		<div class= "itemListingCol">
-			<figure>
-				<img src="https://dummyimage.com/140x180/000/fff">
-				<figcaption> Item Description #2</figcaption>
-			</figure>
-		</div>
-		<div class= "itemListingCol">
-			<figure>
-				<img src="https://dummyimage.com/140x180/000/fff">
-				<figcaption> Item Description #3</figcaption>
-			</figure>
-		</div>
-		<div class= "itemListingCol">
-			<figure>
-				<img src="https://dummyimage.com/140x180/000/fff">
-				<figcaption> Item Description #4</figcaption>
-			</figure>
-		</div>
-	</div>
-		<div class= "itemListingRow">
-		<div class= "itemListingCol">
-			<figure>
-				<img src="https://dummyimage.com/140x180/000/fff">
-				<figcaption> Item Description #5</figcaption>
-			</figure>
-		</div>
-		<div class= "itemListingCol">
-			<figure>
-				<img src="https://dummyimage.com/140x180/000/fff">
-				<figcaption> Item Description #6</figcaption>
-			</figure>
-		</div>
-		<div class= "itemListingCol">
-			<figure>
-				<img src="https://dummyimage.com/140x180/000/fff">
-				<figcaption> Item Description #7</figcaption>
-			</figure>
-		</div>
-		<div class= "itemListingCol">
-			<figure>
-				<img src="https://dummyimage.com/140x180/000/fff">
-				<figcaption> Item Description #8</figcaption>
-			</figure>
-		</div>
-	</div>
 
+	<script type="text/javascript">
+			var content = document.createElement("div");
+			var itemListingRow = [];
+			itemListingRow[0] = document.createElement("div");
+			itemListingRow[1] = document.createElement("div");
+			var itemListingCol = [];
+			var figure = [];
+			var item = [];
+			var itemDescription = [];
+			for (i= 0; i < 8 ; i++) {
+				itemListingCol[i] = document.createElement("div");	
+				itemListingCol[i].setAttribute("class", "itemListingCol");
+				figure[i] = document.createElement("figure");
+				item[i] = document.createElement("img");
+				item[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
+				itemDescription[i] = document.createElement("figcaption");
+				itemDescription[i].innerHTML = "Item Description #" + (i+1);
+			}
+			document.body.appendChild(content);
+				content.appendChild(itemListingRow[0]);
+				content.appendChild(itemListingRow[1]);
+					for(i=0; i < 4; i ++){
+						itemListingRow[0].appendChild(itemListingCol[i]);
+							itemListingCol[i].appendChild(figure[i]);
+								figure[i].appendChild(item[i]);
+								figure[i].appendChild(itemDescription[i]);
+					}
+					for(i=4; i < 8; i ++){
+						itemListingRow[0].appendChild(itemListingCol[i]);
+							itemListingCol[i].appendChild(figure[i]);
+								figure[i].appendChild(item[i]);
+								figure[i].appendChild(itemDescription[i]);
+					}
+			var itemData = [];
+			for (i = 0; i< 3 ; i++){
+			itemData[i] = firebase.database().ref().child( "item"+ (i +1) );
+			itemData[i].on(
+				'value' ,
+
+				function(snap){
+						item[i].innerHTML = snap.val();
+				}
+		);
+			}
+
+	</script>
 </body>
 </html>
