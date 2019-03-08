@@ -5,10 +5,28 @@
 	<title>ToBeDetermine</title>
 	<link rel= "stylesheet" href="BrowserCss.CSS" />
 	<script type="text/javascript" src="FireBase_nav.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+	
+	<script type="text/javascript">
+	  	var config = {
+	    apiKey: "AIzaSyDRuQ_z-_hbAaVdfEa_xwkV9xDZWKRHnv0",
+	    authDomain: "comp1930-project-33dd7.firebaseapp.com",
+	    databaseURL: "https://comp1930-project-33dd7.firebaseio.com",
+	    projectId: "comp1930-project-33dd7",
+	    storageBucket: "",
+	    messagingSenderId: "1015530534917"
+		};
+		firebase.initializeApp(config);
+
+	    //person{person name, itemsTolend{itemObject}, itemsToSell{itemObject}, itemsToRent{itemObject}, itemsPurchased{itemObject}, pic, favorite{itemObject}}
+	    //items{name, size, brand, style, colour, price, image}
+	</script>
+
 
 </head>
 <body>
 	<header>
+		<input type = "text" placeholder="Search.." name="Search">
 		<nav id= "featureMenu">
 			<a href="">BROWSE</a>
 			<a href="">ABOUT</a>
