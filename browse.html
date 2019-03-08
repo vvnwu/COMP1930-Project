@@ -89,30 +89,58 @@
 		</ul>
 	</aside>
 
-	<div id= "itemListing">
-	<script type="text/javascript">
-		function build(){
-			var itemImgContainer = [];
-			var itemImg = [];
-			var itemDescription = [];
-
-			for(i = 0; i < 8; i ++){
-				itemImgContainer[i] = document.createElement("figure");
-				itemImg[i] = document.createElement("img");
-				itemImg[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
-				itemDescription[i] = document.createElement("figcaption");
-				itemDescription[i].innerHTML = "Item Descirption #" + i;
-
-				document.body.appendChild(itemImgContainer[i]);
-					itemImgContainer[i].appendChild(itemImg[i]);
-					itemImgContainer[i].appendChild(itemDescription[i]);
-				itemImgContainer[i].style.textAlign = "center";
-			}
-
-		}
-		build();
-	</script>
-	<div>
+	<div class= "itemListingRow">
+		<div class= "itemListingCol">
+			<figure>
+				<img src="https://dummyimage.com/140x180/000/fff">
+				<figcaption> Item Description #1</figcaption>
+			</figure>
+		</div>
+		<div class= "itemListingCol">
+			<figure>
+				<img src="https://dummyimage.com/140x180/000/fff">
+				<figcaption> Item Description #2</figcaption>
+			</figure>
+		</div>
+		<div class= "itemListingCol">
+			<figure>
+				<img src="https://dummyimage.com/140x180/000/fff">
+				<figcaption> Item Description #3</figcaption>
+			</figure>
+		</div>
+		<div class= "itemListingCol">
+			<figure>
+				<img src="https://dummyimage.com/140x180/000/fff">
+				<figcaption> Item Description #4</figcaption>
+			</figure>
+		</div>
+	</div>
+		<div class= "itemListingRow">
+		<div class= "itemListingCol">
+			<figure>
+				<img src="https://dummyimage.com/140x180/000/fff">
+				<figcaption> Item Description #5</figcaption>
+			</figure>
+		</div>
+		<div class= "itemListingCol">
+			<figure>
+				<img src="https://dummyimage.com/140x180/000/fff">
+				<figcaption> Item Description #6</figcaption>
+			</figure>
+		</div>
+		<div class= "itemListingCol">
+			<figure>
+				<img src="https://dummyimage.com/140x180/000/fff">
+				<figcaption> Item Description #7</figcaption>
+			</figure>
+		</div>
+		<div class= "itemListingCol">
+			<figure>
+				<img src="https://dummyimage.com/140x180/000/fff">
+				<figcaption> Item Description #8</figcaption>
+			</figure>
+		</div>
+	</div>
 
 </body>
 </html>
