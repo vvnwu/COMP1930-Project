@@ -1,4 +1,4 @@
-    #bar {
+#bar {
       background-color: darkgrey;
       border-bottom-width: 1px;
       border-color: lightgray;
@@ -12,14 +12,6 @@
       z-index: -1;
       margin-top: 90px;
     }
-    a {
-      font-family: sans-serif;
-      text-decoration: none;
-      color: black;
-    }
-    a:hover {
-      color:grey;
-    }
     nav ul {
       display:inline-flex;
       padding-right: 35px;
@@ -29,28 +21,41 @@
     }
     nav li {
       display: inline;
-      padding: 0px 0px 0 20px;
-      text-decoration: none;
+      padding: 0 0px 0 20px;
       font-size: 10pt;
     }
     #greynav {
-      top: 80px;
-      right: 50px;
-      position: absolute;
-      width: 100;
+    	float: right;
+      	top: 80px;
+      	right: 50px;
+      	width: 100%;
+      	background-color: grey;
+
     }
     #greynav li {
-      padding: 0 20px 0 40px;
+      padding: 0 40px 0 40px;
       margin-top: 20px;
       font-size: 14pt;
     }
     aside {
-      width: 250px;
       float: left;
-      position: fixed;
       margin-top: 250px;
+      text-decoration: underline;
       text-transform: uppercase;
+      clear: right;
+      height: 600px;
     }
     #filters {
       position: relative;
+      top: 5em;
+    }
+
+    figure{
+    	text-align: center;
+    }
+
+    .itemListingCol{
+    	float: left;
+    	width: 20%;
+    	padding: 5px;
     }
