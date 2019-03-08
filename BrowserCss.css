@@ -1,3 +1,61 @@
-aside{
-	float: left;
-}
+#bar {
+      background-color: darkgrey;
+      border-bottom-width: 1px;
+      border-color: lightgray;
+      border-left-width: 0px;
+      border-right-width: 0px;
+      border-top-width: 1px;
+      border-style: solid;
+      height: 100px;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      margin-top: 90px;
+    }
+    nav ul {
+      display:inline-flex;
+      padding-right: 35px;
+      float: right;
+      margin-top: 40px;
+      text-transform: uppercase;
+    }
+    nav li {
+      display: inline;
+      padding: 0 0px 0 20px;
+      font-size: 10pt;
+    }
+    #greynav {
+    	float: right;
+      	top: 80px;
+      	right: 50px;
+      	width: 100%;
+      	background-color: grey;
+
+    }
+    #greynav li {
+      padding: 0 40px 0 40px;
+      margin-top: 20px;
+      font-size: 14pt;
+    }
+    aside {
+      float: left;
+      margin-top: 250px;
+      text-decoration: underline;
+      text-transform: uppercase;
+      clear: right;
+      height: 600px;
+    }
+    #filters {
+      position: relative;
+      top: 5em;
+    }
+
+    figure{
+    	text-align: center;
+    }
+
+    .itemListingCol{
+    	float: left;
+    	width: 20%;
+    	padding: 5px;
+    }
