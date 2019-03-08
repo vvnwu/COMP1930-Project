@@ -4,10 +4,10 @@
 
 	<title>ToBeDetermine</title>
 	<link rel= "stylesheet" href="BrowserCss.CSS" />
-	<script type="text/javascript" src="FireBase_nav.js"></script>
+	<!--<script type="text/javascript" src="FireBase_nav.js"></script>-->
 	<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
 	
-	<script type="text/javascript">
+	<script>
 	  	var config = {
 	    apiKey: "AIzaSyDRuQ_z-_hbAaVdfEa_xwkV9xDZWKRHnv0",
 	    authDomain: "comp1930-project-33dd7.firebaseapp.com",
@@ -17,7 +17,6 @@
 	    messagingSenderId: "1015530534917"
 		};
 		firebase.initializeApp(config);
-
 	    //person{person name, itemsTolend{itemObject}, itemsToSell{itemObject}, itemsToRent{itemObject}, itemsPurchased{itemObject}, pic, favorite{itemObject}}
 	    //items{name, size, brand, style, colour, price, image}
 	</script>
@@ -28,21 +27,24 @@
 	<header>
 		<input type = "text" placeholder="Search.." name="Search">
 		<nav id= "featureMenu">
-			<a href="">BROWSE</a>
-			<a href="">ABOUT</a>
-			<a href="">HOME</a>
-			<a href="">HISTORY</a>
-			<a href="">UPCYCLE</a>
+            <ul>
+                <li><a href="">BROWSE</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">HOME</a></li>
+                <li><a href="">HISTORY</a></li>
+                <li><a href="">UPCYCLE</a></li>
+            </ul>
 		</nav>
 		<nav id= "greynav">
-      <ul>
-			<li><a href="">MENS</a></li>
-				<!--<ul>
-        		<li>Outerwear</li>
-    		   	<li>Tops</li>
-    		    <li>Bottoms</li>
-    		    <li>Shoes</li>
-   			   	</ul>-->
+        <ul>
+			<li><a href="">MENS</a>
+              <ul>
+                  <li>Outerwear</li>
+                  <li>Tops</li>
+                  <li>Bottoms</li>
+                  <li>Shoes</li>
+                </ul>
+            </li>
 			<li><a href="">WOMENS</a></li>
 				<!--<ul>
         		<li>Outerwear</li>
@@ -83,8 +85,8 @@
 	</aside>
 
 
-	<script type="text/javascript">
-        var numberItems = 
+	<script>
+        var numberItems = 0;
 			/*var content = document.createElement("div");
 			var itemListingRow = [];
 			itemListingRow[0] = document.createElement("div");
@@ -100,7 +102,7 @@
 				item[i] = document.createElement("img");
 				item[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
 				itemDescription[i] = document.createElement("figcaption");
-				itemDescription[i].innerHTML = "Item Description #" + (i+1);
+				itemDescription[i].innerText = "Item Description #" + (i+1);
 			}
 			document.body.appendChild(content);
 				content.appendChild(itemListingRow[0]);
@@ -117,16 +119,19 @@
 								figure[i].appendChild(item[i]);
 								figure[i].appendChild(itemDescription[i]);
 					}
+			
 			var itemData = [];
 			for (i = 0; i< 3 ; i++){
-			itemData[i] = firebase.database().ref().child( "item"+ (i +1) );
+			itemData[i] = firebase.database().ref().child("item" + (i + 1)).child("name");
 			itemData[i].on(
 				'value' ,
 
 				function(snap){
-						item[i].innerHTML = snap.val();
+						itemDescription[i].innerText = snap.val();
 				}
 		);
+			}
+			);
 			}*/
 
 	</script>
