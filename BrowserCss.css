@@ -1,3 +1,10 @@
+input{
+	float: right;
+}
+#featureMenu{
+	float: right;
+	margin-right: 20px; 
+}
 #bar {
       background-color: darkgrey;
       border-bottom-width: 1px;
@@ -27,7 +34,6 @@
     #greynav {
     	float: right;
       	top: 80px;
-      	right: 50px;
       	width: 100%;
       	background-color: grey;
 
@@ -39,7 +45,6 @@
     }
     aside {
       float: left;
-      margin-top: 250px;
       text-decoration: underline;
       text-transform: uppercase;
       clear: right;
