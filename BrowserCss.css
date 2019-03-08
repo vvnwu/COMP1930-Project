@@ -1,3 +1,10 @@
+input{
+	float: right;
+}
+#featureMenu{
+	float: right;
+	margin-right: 20px; 
+}
 #bar {
       background-color: darkgrey;
       border-bottom-width: 1px;
@@ -6,7 +13,7 @@
       border-right-width: 0px;
       border-top-width: 1px;
       border-style: solid;
-      height: 60px;
+      height: 100px;
       width: 100%;
       position: absolute;
       z-index: -1;
@@ -24,29 +31,20 @@
       padding: 0 0px 0 20px;
       font-size: 10pt;
     }
-    #featureMenu {
-      float: right;
-      padding: 0 80px 0 80px;
-    }
     #greynav {
     	float: right;
       	top: 80px;
-      	right: 50px;
       	width: 100%;
       	background-color: grey;
 
     }
     #greynav li {
-      padding: 0 80px 0 40px;
+      padding: 0 40px 0 40px;
       margin-top: 20px;
       font-size: 14pt;
     }
-    #categories {
-      display:none;
-    }
     aside {
       float: left;
-      margin-top: 25px;
       text-decoration: underline;
       text-transform: uppercase;
       clear: right;
