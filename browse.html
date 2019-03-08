@@ -16,11 +16,35 @@
 			<a href="">HISTORY</a>
 			<a href="">UPCYCLE</a>
 		</nav>
-		<nav id= "categoryMenu">
+		<nav id= "greynav">
 			<a href="">MENS</a>
+				<!--<ul>
+        		<li>Outerwear</li>
+    		   	<li>Tops</li>
+    		    <li>Bottoms</li>
+    		    <li>Shoes</li>
+   			   	</ul>-->
 			<a href="">WOMENS</a>
+				<!--<ul>
+        		<li>Outerwear</li>
+       			<li>Tops</li>
+     		  	<li>Bottoms</li>
+     		   	<li>Shoes</li>
+     		  	</ul>-->
 			<a href="">NEUTRAL</a>
+				<!--<ul>
+        		<li>Outerwear</li>
+        		<li>Tops</li>
+        		<li>Bottoms</li>
+        		<li>Shoes</li>
+       			</ul>-->
 			<a href="">KIDS</a>
+				<!--<ul>
+        		<li>Outerwear</li>
+        		<li>Tops</li>
+        		<li>Bottoms</li>
+        		<li>Shoes</li>
+       			</ul>-->
 		</nav>
 	</header>
 	<aside>
@@ -33,12 +57,35 @@
 			<li id="filter_size">Size </li>
 			<li id="filter_brand">Brand</li>
 			<li id="filter_style">Style</li>
-			<li id=>Colour</li>
-			<li>Price Range</li>
+			<li id="filter_color">Colour</li>
+			<li id= "filter_price">Price Range</li>
 		</ul>
 	</aside>
 
-	<header></header>
+	<div id= "itemListing">
+	<script type="text/javascript">
+		function build(){
+			var itemImgContainer = [];
+			var itemImg = [];
+			var itemDescription = [];
+
+			for(i = 0; i < 8; i ++){
+				itemImgContainer[i] = document.createElement("figure");
+				itemImg[i] = document.createElement("img");
+				itemImg[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
+				itemDescription[i] = document.createElement("figcaption");
+				itemDescription[i].innerHTML = "Item Descirption #" + i;
+
+				document.body.appendChild(itemImgContainer[i]);
+					itemImgContainer[i].appendChild(itemImg[i]);
+					itemImgContainer[i].appendChild(itemDescription[i]);
+				itemImgContainer[i].style.textAlign = "center";
+			}
+
+		}
+		build();
+	</script>
+	<div>
 
 </body>
 </html>
