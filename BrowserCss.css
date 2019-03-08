@@ -1,4 +1,4 @@
-#bar {
+    #bar {
       background-color: darkgrey;
       border-bottom-width: 1px;
       border-color: lightgray;
@@ -12,6 +12,14 @@
       z-index: -1;
       margin-top: 90px;
     }
+    a {
+      font-family: sans-serif;
+      text-decoration: none;
+      color: black;
+    }
+    a:hover {
+      color:grey;
+    }
     nav ul {
       display:inline-flex;
       padding-right: 35px;
@@ -21,7 +29,8 @@
     }
     nav li {
       display: inline;
-      padding: 0 0px 0 20px;
+      padding: 0px 0px 0 20px;
+      text-decoration: none;
       font-size: 10pt;
     }
     #greynav {
@@ -31,19 +40,17 @@
       width: 100;
     }
     #greynav li {
-      padding: 0 40px 0 40px;
+      padding: 0 20px 0 40px;
       margin-top: 20px;
       font-size: 14pt;
     }
     aside {
-      width: 130px;
+      width: 250px;
       float: left;
       position: fixed;
       margin-top: 250px;
-      text-decoration: underline;
       text-transform: uppercase;
     }
     #filters {
       position: relative;
-      top: 5em;
     }
