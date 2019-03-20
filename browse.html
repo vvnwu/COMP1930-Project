@@ -4,23 +4,22 @@
 
 	<title>ToBeDetermine</title>
 	<link rel= "stylesheet" href="BrowserCss.CSS" />
-	<script type="text/javascript" src="FireBase_nav.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
 	
-	<script type="text/javascript">
-	  	var config = {
+
+
+	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
 	    apiKey: "AIzaSyDRuQ_z-_hbAaVdfEa_xwkV9xDZWKRHnv0",
 	    authDomain: "comp1930-project-33dd7.firebaseapp.com",
 	    databaseURL: "https://comp1930-project-33dd7.firebaseio.com",
 	    projectId: "comp1930-project-33dd7",
-	    storageBucket: "",
+	    storageBucket: "comp1930-project-33dd7.appspot.com",
 	    messagingSenderId: "1015530534917"
-		};
-		firebase.initializeApp(config);
-	    //person{person name, itemsTolend{itemObject}, itemsToSell{itemObject}, itemsToRent{itemObject}, itemsPurchased{itemObject}, pic, favorite{itemObject}}
-	    //items{name, size, brand, style, colour, price, image}
+	  };
+	  firebase.initializeApp(config);
 	</script>
-
 
 </head>
 <body>
@@ -83,6 +82,7 @@
 
 
 	<script type="text/javascript">
+			//listing items using javascript
 			var content = document.createElement("div");
 			var itemListingRow = [];
 			itemListingRow[0] = document.createElement("div");
@@ -99,6 +99,7 @@
 				item[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
 				itemDescription[i] = document.createElement("figcaption");
 				itemDescription[i].innerText = "Item Description #" + (i+1);
+				itemDescription[i].setAttribute("id", "itemDescription" + i);
 			}
 			document.body.appendChild(content);
 				content.appendChild(itemListingRow[0]);
@@ -115,18 +116,43 @@
 								figure[i].appendChild(item[i]);
 								figure[i].appendChild(itemDescription[i]);
 					}
-			
-			var itemData = [];
-			for (i = 0; i< 3 ; i++){
-			itemData[i] = firebase.database().ref().child("item" + (i + 1)).child("name");
-			itemData[i].on(
-				'value' ,
 
-				function(snap){
-						itemDescription[i].innerText = snap.val();
-				}
-			);
+			/*items' type accessing from firebase
+			 *currently only have 2 data
+			 */
+			var itemTypeData = [];
+			for (i = 0; i< 2 ; i++){
+			itemTypeData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("type");
 			}
+
+			/*items' price accessing from firebase
+			 *currently only have 2 data
+			 */
+			var itemPriceData = [];
+			for (i = 0; i< 2 ; i++){
+			itemPriceData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("price");
+			}
+
+			//helper method to listen from database
+			var listening = function(number){
+				itemTypeData[number].on(
+					'value', 
+					function(snap){
+
+						itemDescription[number].innerText = snap.val();
+					});
+				itemPriceData[number].on(
+					'value', 
+					function(snap){
+
+						itemDescription[number].innerText += "_Price:" +snap.val();
+					});
+			}
+
+			listening(0);
+			listening(1);
+			
+
 
 	</script>
 </body>
