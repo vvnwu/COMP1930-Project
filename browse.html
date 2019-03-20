@@ -121,7 +121,7 @@
 			 *currently only have 2 data
 			 */
 			var itemTypeData = [];
-			for (i = 0; i< 2 ; i++){
+			for (i = 0; i< 8 ; i++){
 			itemTypeData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("type");
 			}
 
@@ -129,7 +129,7 @@
 			 *currently only have 2 data
 			 */
 			var itemPriceData = [];
-			for (i = 0; i< 2 ; i++){
+			for (i = 0; i< 8 ; i++){
 			itemPriceData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("price");
 			}
 
@@ -148,10 +148,9 @@
 						itemDescription[number].innerText += "_Price:" +snap.val();
 					});
 			}
-
-			listening(0);
-			listening(1);
-			
+			for(i= 0; i < 8; i++){
+			listening(i);
+			}
 
 
 	</script>
