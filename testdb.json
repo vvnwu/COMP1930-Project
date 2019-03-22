@@ -1,0 +1,12 @@
+{
+    "items" : {
+        "item1" : {
+            "color" : "blue",
+            "size" : ["S", "M", "L"]
+        },
+        "item2" : {
+            "color" : "red",
+            "size" : ["S", "M"]
+        }
+    }
+}

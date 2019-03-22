@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>dbReadingTest</title>
+        
+        <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDRuQ_z-_hbAaVdfEa_xwkV9xDZWKRHnv0",
+            authDomain: "comp1930-project-33dd7.firebaseapp.com",
+            databaseURL: "https://comp1930-project-33dd7.firebaseio.com",
+            projectId: "comp1930-project-33dd7",
+            storageBucket: "comp1930-project-33dd7.appspot.com",
+            messagingSenderId: "1015530534917"
+          };
+          firebase.initializeApp(config);
+        </script>
+    </head>
+    
+    <body>
+        
+        <script>
+            var body = document.body;
+            /*var body = document.body;
+            var item1 = document.createElement("div");
+            body.appendChild(item1);
+            var name1 = document.createElement("h1");
+            item1.appendChild(name1);
+            name1.innerHTML ="item1";*/
+            var ref = firebase.database().ref().child("test1");
+            ref.on(
+                "value",
+                function(snap) {
+                    console.log("hello");
+                    /*var items = snap.firstChild;
+                    var item1 = document.createElement("div");
+                    body.appendChild(item1);
+                    var name1 = document.createElement("h1");
+                    item1.appendChild(name1);
+                    name1.innerHTML ="item1";*/
+                });
+            
+        </script>
+    </body>
+</html>

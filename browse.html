@@ -83,10 +83,26 @@
 			<li id= "filter_price">Price Range</li>
 		</ul>
 	</aside>
-
+    
+    
+    <h1 id="head1">test</h1>
 
 	<script>
+        
         var numberItems = 0;
+        var out = document.getElementById("head1");
+        var getItems = function(snap){
+            var items=snap.val;
+            /*for(var item: items){
+                var div = document.createElement("div");
+                div.appendChild(item.)
+            }*/
+            out.innerHTML=snap.val;
+        }
+        
+        var dbRef = firebase.database().ref().child("items");
+        dbRef.on("value", getItems);
+        
 			/*var content = document.createElement("div");
 			var itemListingRow = [];
 			itemListingRow[0] = document.createElement("div");
