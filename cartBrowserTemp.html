@@ -4,7 +4,33 @@
 
 	<title>ToBeDetermine</title>
 	<link rel= "stylesheet" href="BrowserCss.CSS" />
-	
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<style>
+        
+        #currentCloset{
+            display: flex;
+            flex-flow: column;
+            background-color:pink;
+            height: 50%;
+
+        }
+
+        .cartItem{
+            width:inherit;
+        /*    display:flex;*/
+            font-size: 10pt;
+            justify-content: space-around;
+
+        }
+
+        .cartItem>img{
+            height:50px;
+            width: 50px;
+        }
+        .cartItem>*{
+            display:inline-block;
+        }
+    </style>
 
 
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
@@ -66,21 +92,69 @@
 		</nav>
 	</header>
 	<aside>
-		<p>FILTERS APPLIED</p>
+        <div>
+            <i id = "filterButton" class="fas fa-filter"></i>
+            <i id = "orderButton" class="fas fa-shopping-basket"></i>
+        </div>
+		<p>CURRENT ORDER</p>
 		<hr>
-		<p id= filtersApplied></p>
-		<p>FILTERS</p>
-		<hr>
-		<ul>
-			<li id="filter_size">Size </li>
-			<li id="filter_brand">Brand</li>
-			<li id="filter_style">Style</li>
-			<li id="filter_color">Colour</li>
-			<li id= "filter_price">Price Range</li>
-		</ul>
+		<p id= "closet">CLOSET ( to borrow )</p>
+        <div id="currentCloset">
+            <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00 / 2 weeks</p>
+                    <p class ="size">S</p>
+                </div>   
+            </div>
+            
+            <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00 / 2 weeks</p>
+                    <p class ="size">M</p>
+                </div>   
+            </div>
+            
+             <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00</p>
+                    <p class ="size">L</p>
+                </div>   
+            </div>
+        </div>
+            
+		<p id = "cart">CART ( to keep )</p>
+        <div id="currentCart">
+             <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00</p>
+                    <p class ="size">S</p>
+                </div>   
+            </div>
+            
+            <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00</p>
+                    <p class ="size">M</p>
+                </div>   
+            </div>
+            
+             <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00</p>
+                    <p class ="size">L</p>
+                </div>   
+            </div>
+        </div>
+		<button>Checkout</button>
 	</aside>
 
-	<script type="text/javascript">
+	<script>
 			//listing items using javascript
 			var content = document.createElement("div");
 			var itemListingRow = [];
@@ -147,5 +221,16 @@
 			}
 	</script>
 
+    <script>
+        function cartItem(image,price,size){
+            this.image=image;
+            this.price=price;
+            this.size=size;
+            this.display = function(){
+                document.createElement("div");;
+                
+            }
+        }
+    </script>
 </body>
 </html>

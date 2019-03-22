@@ -69,7 +69,7 @@ aside {
   text-decoration: underline;
   text-transform: uppercase;
   clear: right;
-  height: 600px;
+  height: inherit;
 }
 #filters {
   position: relative;
@@ -87,3 +87,4 @@ input {
   width: 20%;
   padding: 5px;
 }
+
