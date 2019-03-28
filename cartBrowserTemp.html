@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>ToBeDetermine</title>
+	<link rel= "stylesheet" href="BrowserCss.CSS" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<style>
+        
+        #currentCloset{
+            display: flex;
+            flex-flow: column;
+            background-color:pink;
+            height: 50%;
+
+        }
+
+        .cartItem{
+            width:inherit;
+        /*    display:flex;*/
+            font-size: 10pt;
+            justify-content: space-around;
+
+        }
+
+        .cartItem>img{
+            height:50px;
+            width: 50px;
+        }
+        .cartItem>*{
+            display:inline-block;
+        }
+    </style>
+
+
+	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyDRuQ_z-_hbAaVdfEa_xwkV9xDZWKRHnv0",
+	    authDomain: "comp1930ee-project-33dd7.firebaseapp.com",
+	    databaseURL: "https://comp1930-project-33dd7.firebaseio.com",
+	    projectId: "comp1930-project-33dd7",
+	    storageBucket: "comp1930-project-33dd7.appspot.com",
+	    messagingSenderId: "1015530534917"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
+</head>
+<body>
+	<header>
+		<input type = "text" placeholder="Search.." name="Search">
+		<nav id= "featureMenu">
+			<li><a href="">BROWSE</a></li>
+			<li><a href="">ABOUT</a></li>
+			<li><a href="">HOME</a></li>
+			<li><a href="">HISTORY</a></li>
+			<li><a href="">UPCYCLE</a></li>
+		</nav>
+		<nav id= "greynav">
+      <ul>
+			<li><a href="">MENS</a></li>
+				<ul>
+          <li>Outerwear</li>
+          <li>Tops</li>
+          <li>Bottoms</li>
+          <li>Shoes</li>
+        </ul>
+			<li><a href="">WOMENS</a></li>
+				<!--<ul>
+        		<li>Outerwear</li>
+       			<li>Tops</li>
+     		  	<li>Bottoms</li>
+     		   	<li>Shoes</li>
+     		  	</ul>-->
+			<li><a href="">NEUTRAL</a></li>
+				<!--<ul>
+        		<li>Outerwear</li>
+        		<li>Tops</li>
+        		<li>Bottoms</li>
+        		<li>Shoes</li>
+       			</ul>-->
+			<li><a href="">KIDS</a></li>
+				<!--<ul>
+        		<li>Outerwear</li>
+        		<li>Tops</li>
+        		<li>Bottoms</li>
+        		<li>Shoes</li>
+        </ul>-->
+      </ul>
+		</nav>
+	</header>
+	<aside>
+        <div>
+            <i id = "filterButton" class="fas fa-filter"></i>
+            <i id = "orderButton" class="fas fa-shopping-basket"></i>
+        </div>
+		<p>CURRENT ORDER</p>
+		<hr>
+		<p id= "closet">CLOSET ( to borrow )</p>
+        <div id="currentCloset">
+            <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00 / 2 weeks</p>
+                    <p class ="size">S</p>
+                </div>   
+            </div>
+            
+            <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00 / 2 weeks</p>
+                    <p class ="size">M</p>
+                </div>   
+            </div>
+            
+             <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00</p>
+                    <p class ="size">L</p>
+                </div>   
+            </div>
+        </div>
+            
+		<p id = "cart">CART ( to keep )</p>
+        <div id="currentCart">
+             <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00</p>
+                    <p class ="size">S</p>
+                </div>   
+            </div>
+            
+            <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00</p>
+                    <p class ="size">M</p>
+                </div>   
+            </div>
+            
+             <div class="cartItem">
+                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+                <div>
+                    <p class ="price">$15.00</p>
+                    <p class ="size">L</p>
+                </div>   
+            </div>
+        </div>
+		<button>Checkout</button>
+	</aside>
+
+	<script>
+			//listing items using javascript
+			var content = document.createElement("div");
+			var itemListingRow = [];
+			itemListingRow[0] = document.createElement("div");
+			itemListingRow[1] = document.createElement("div");
+			var itemListingCol = [];
+			var figure = [];
+			var item = [];
+			var itemDescription = [];
+			for (i= 0; i < 8 ; i++) {
+				itemListingCol[i] = document.createElement("div");	
+				itemListingCol[i].setAttribute("class", "itemListingCol");
+				figure[i] = document.createElement("figure");
+				item[i] = document.createElement("img");
+				item[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
+				itemDescription[i] = document.createElement("figcaption");
+				itemDescription[i].innerText = "Item Description #" + (i+1);
+				itemDescription[i].setAttribute("id", "itemDescription" + i);
+			}
+			document.body.appendChild(content);
+				content.appendChild(itemListingRow[0]);
+				content.appendChild(itemListingRow[1]);
+					for(i=0; i < 4; i ++){
+						itemListingRow[0].appendChild(itemListingCol[i]);
+							itemListingCol[i].appendChild(figure[i]);
+								figure[i].appendChild(item[i]);
+								figure[i].appendChild(itemDescription[i]);
+					}
+					for(i=4; i < 8; i ++){
+						itemListingRow[0].appendChild(itemListingCol[i]);
+							itemListingCol[i].appendChild(figure[i]);
+								figure[i].appendChild(item[i]);
+								figure[i].appendChild(itemDescription[i]);
+					}
+			/*items' type accessing from firebase
+			 *currently only have 2 data
+			 */
+			var itemTypeData = [];
+			for (i = 0; i< 8 ; i++){
+			itemTypeData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("type");
+			}
+			/*items' price accessing from firebase
+			 *currently only have 2 data
+			 */
+			var itemPriceData = [];
+			for (i = 0; i< 8 ; i++){
+			itemPriceData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("price");
+			}
+			//helper method to listen from database
+			var listening = function(number){
+				itemTypeData[number].on(
+					'value', 
+					function(snap){
+						itemDescription[number].innerText = snap.val();
+					});
+				itemPriceData[number].on(
+					'value', 
+					function(snap){
+						itemDescription[number].innerText += "_Price:" +snap.val();
+					});
+			}
+			for(i= 0; i < 8; i++){
+			listening(i);
+			}
+	</script>
+
+    <script>
+        function cartItem(image,price,size){
+            this.image=image;
+            this.price=price;
+            this.size=size;
+            this.display = function(){
+                document.createElement("div");;
+                
+            }
+        }
+    </script>
+</body>
+</html>

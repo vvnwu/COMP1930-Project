@@ -3,6 +3,8 @@
 <head>
 	<title>Item page</title>
     <link rel= "stylesheet" href="BrowserCss.css">
+    <link rel= "stylesheet" href="itemPageCss.css">
+
 </head>
     
 <body>
@@ -49,43 +51,66 @@
 	</header>
     
     <div id="itemSell">
-        <figure>
-            <img src= "https://dummyimage.com/200x300/000/fff" alt="dummyImage">
+        <aside>
+        <figure id="itemFigure">
+            <img src= "https://dummyimage.com/300x400/000/fff" alt="dummyImage">
             <figcaption><b>Price: </b>$ ##.## /week</figcaption>
         </figure>
-        <div id="details">
-            <h1>Item Name</h1>
-            <h2><b>Listed By:</b> name</h2>
+        </aside>
+        <div id= "detailsWithReviews">
+            <div id="details">
+                <h1 id="itemName">Item Name</h1><hr>
+                <h2><b>Listed By:</b> name</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-        </div>
-        <form>
-            <fieldset>
-                <select name="size" title="name">
-                    <option value="s">Small</option>
-                    <option value="m">Medium</option>
-                    <option value="l">Large</option>
-                </select>
-                <input type="color" name="color" id="color"/>
-                <input type="submit" name="submit" id="submit" value="Submit"/>
-            </fieldset>
-        </form>
-        <div id="reviews">
-            <div class="review">
-                <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage">
-                <h3>Name</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
             </div>
-            <div class="review">
-                <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage">
-                <h3>Name</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+            <form>
+                <fieldset>
+                    <label id= "labelSize">-Size </label>
+                    <select id= "sizeSelect" name="size" title="name">
+                        <option value="s">Small</option>
+                        <option value="m">Medium</option>
+                        <option value="l">Large</option>
+                    </select><br><br>
+                    <label>-Color</label>
+                    <input type="color" name="color" id="color"/>
+                </fieldset>
+                <br><br>
+                <input type="button" name="submit" id="submit" value="Submit"/>
+            </form>
+
+            <div id="reviews">
+                <h1>Reviews</h1>
+                <hr>
+                <div class="review">
+                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class= "reviewerImg">
+                    <div class="nameAndReview">
+                    <h3>Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                </div>
+                </div>
+                <div class="review">
+                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class= "reviewerImg">
+                    <div class="nameAndReview">
+
+                    <h3>Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                </div>
+                </div>
+                <div class="review">
+                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class= "reviewerImg">
+                    <div class="nameAndReview">
+
+                    <h3>Name</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                    </div>
+                </div>
             </div>
-            <div class="review">
-                <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage">
-                <h3>Name</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-            </div>
-        </div>
+        </div> 
+
     </div>
+    
+    <script>
+    </script>
+
 </body>
 </html>

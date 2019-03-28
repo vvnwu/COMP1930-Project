@@ -1,0 +1,41 @@
+#itemFigure {
+	margin-top: 50px;
+}
+aside{
+	float: left;
+	height: 100%;
+	width: 40%;
+}
+
+#detailsWithReviews{
+	float: right;
+	width: 50%;
+	margin-right: 50px;
+}
+fieldset{
+	width: 30%;
+}
+#sizeSelect{
+	width: 80%;
+	float: right;
+}
+#color{
+	width: 80%;
+	float: right;
+}
+
+#reviews{
+	float: right;
+}
+.reviewerImg{
+	width: 50px;
+	height: 100%;
+	float: left;
+	display: inline-block;
+	clear: right;
+	margin-top: 20px;
+}
+.nameAndReview{
+	width: 80%;
+	float: right;
+}

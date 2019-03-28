@@ -114,7 +114,7 @@ aside {
   height: inherit;
   border-right: 1px solid black;
   height: 100vh;
-  
+
 }
 #filters {
   position: relative;
@@ -132,3 +132,4 @@ input {
   width: 20%;
   padding: 5px;
 }
+
