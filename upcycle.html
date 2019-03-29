@@ -20,13 +20,14 @@
 	  };
 	  firebase.initializeApp(config);
 	</script>
-  
+
 </head>
 <body>
   
- <div id="container">
 	<header>
-    <nav id= "featureMenu">
+    <div id="container">
+      
+      <nav id= "featureMenu">
         <li><a href="home.html">HOME</a></li>
         <li><a href="browse.html">BROWSE</a></li>
         <li><a href="upcycle.html">UPCYCLE</a></li>
@@ -72,9 +73,23 @@
             </li>
           </ul>
       </nav>
+    </div>
 	</header>
-  </div>
+  
+	<aside>
+		<p>FILTERS APPLIED</p>
+		<hr>
+		<p id= filtersApplied></p>
+		<p>FILTERS</p>
+		<hr>
+		<ul>
+			<li id="filter_size">Size </li>
+			<li id="filter_brand">Brand</li>
+			<li id="filter_style">Style</li>
+			<li id="filter_color">Colour</li>
+			<li id= "filter_price">Price Range</li>
+		</ul>
+	</aside>
 
-  <div class=""></div>
 </body>
 </html>
