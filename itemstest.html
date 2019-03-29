@@ -22,24 +22,7 @@
         
         <script>
             var body = document.body;
-            /*var body = document.body;
-            var item1 = document.createElement("div");
-            body.appendChild(item1);
-            var name1 = document.createElement("h1");
-            item1.appendChild(name1);
-            name1.innerHTML ="item1";*/
-            var ref = firebase.database().ref().child("test1");
-            ref.on(
-                "value",
-                function(snap) {
-                    console.log("hello");
-                    /*var items = snap.firstChild;
-                    var item1 = document.createElement("div");
-                    body.appendChild(item1);
-                    var name1 = document.createElement("h1");
-                    item1.appendChild(name1);
-                    name1.innerHTML ="item1";*/
-                });
+            body.appendChild("hello");
             
         </script>
     </body>

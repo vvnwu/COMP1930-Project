@@ -4,7 +4,7 @@
 
 	<title>ToBeDetermine</title>
 	<link rel= "stylesheet" href="BrowserCss.CSS" />
-	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
@@ -24,49 +24,7 @@
 </head>
 <body>
   
-	<header>
-<<<<<<< HEAD
-		<input type = "text" placeholder="Search.." name="Search">
-		<nav id= "featureMenu">
-            <li><a href="browse.html">Browse</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="">Home</a></li>
-          <li><a href="">History</a></li>
-          <li><a href="">Upcycle</a></li>
-		</nav>
-		<nav id= "greynav">
-      <ul>
-			<li><a href="">MENS</a></li>
-				<ul>
-          <li>Outerwear</li>
-          <li>Tops</li>
-          <li>Bottoms</li>
-          <li>Shoes</li>
-        </ul>
-			<li><a href="">WOMENS</a></li>
-				<!--<ul>
-        		<li>Outerwear</li>
-       			<li>Tops</li>
-     		  	<li>Bottoms</li>
-     		   	<li>Shoes</li>
-     		  	</ul>-->
-			<li><a href="">NEUTRAL</a></li>
-				<!--<ul>
-        		<li>Outerwear</li>
-        		<li>Tops</li>
-        		<li>Bottoms</li>
-        		<li>Shoes</li>
-       			</ul>-->
-			<li><a href="">KIDS</a></li>
-				<!--<ul>
-        		<li>Outerwear</li>
-        		<li>Tops</li>
-        		<li>Bottoms</li>
-        		<li>Shoes</li>
-        </ul>-->
-      </ul>
-		</nav>
-=======
+    <header>
     <div id="container">
       
       <nav id= "featureMenu">
@@ -97,7 +55,7 @@
                 <li><a href="#">Shoes</a></li>
               </ul>
             </li>
-            <li><a href="#">Neutral</a>
+            <li><a href="#">Unisex</a>
               <ul>
                 <li><a href="#">Outerwear</a></li>
                 <li><a href="#">Tops</a></li>
@@ -116,10 +74,13 @@
           </ul>
       </nav>
     </div>
->>>>>>> 4763c879bd2e0813238456966d7e8c89b923675a
 	</header>
   
 	<aside>
+        <div>
+            <i id = "filterButton" class="fas fa-filter"></i>
+            <i id = "orderButton" class="fas fa-shopping-basket"></i>
+        </div>
 		<p>FILTERS APPLIED</p>
 		<hr>
 		<p id= filtersApplied></p>
