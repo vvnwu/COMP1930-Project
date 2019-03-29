@@ -12,6 +12,11 @@ aside{
 	width: 50%;
 	margin-right: 50px;
 }
+#detailsWithCalendar{
+	float: right;
+	width: 50%;
+	margin-right: 50px;
+}
 fieldset{
 	width: 30%;
 }
