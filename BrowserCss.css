@@ -1,17 +1,3 @@
-#bar {
-  background-color: darkgrey;
-  border-bottom-width: 1px;
-  border-color: lightgray;
-  border-left-width: 0px;
-  border-right-width: 0px;
-  border-top-width: 1px;
-  border-style: solid;
-  height: 60px;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
-  margin-top: 90px;
-}
 a {
   text-decoration: none;
   color: black;
@@ -20,75 +6,70 @@ a:hover{
   color: darkgrey;
 }
 #featureMenu {
-  float: right;
   margin-top: 0px;
-  padding: 0 80px 0 80px;
+  padding: 0 0 0 0;
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  margin: 25px;
 }
 #featureMenu ul {
-  display:inline-flex;
-  float: right;
   margin: 40px;
   text-transform: uppercase;
 }
 #featureMenu li {
   display: inline;
-  padding: 0 0px 0 20px;
+  padding: 0 0 0 20px;
   font-size: 10pt;
-}
-#greynav {
-    text-align: center;
-    
+  margin-right: 50px;
 }
 /* ULs */
 
 #greynav ul {
-    padding: 0;
-    display: none;
-    background: #efefef;
-    top: 0;
-    position: absolute;
-    list-style: none;
+  padding: 0;
+  display: none;
+  background: #efefef;
+  position: absolute;
+  list-style: none;
+  
 }
 
 #greynav > ul {
-    background: #efefef;
-    position: relative;
-    display: inline-table;
-    width: 100%;
-    float: right;
+  background: #efefef;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 50px;
 }
 
 #greynav > ul > li > ul {
-    top: 100%;
+  top: 100%;
 }
 
 #greynav li:hover > ul {
-    display: block;
+  display: block;
 }
 
 /*LIs*/
 
 #greynav  li  {
-    float: none;
-    position: relative;
+  float: none;
+  position: relative;
 }
 
 #greynav > ul > li {
-    float: left !important;
+    float: right !important;
     border: none;
 }
-/*
-#greynav ul li:hover {
-    background: grey;
-}
-*/
 /* As */
 
 #greynav a {
-    display: block;
-    padding: 30px;
-    color: black;
-    text-decoration: none;
+  display: block;
+  padding: 30px;
+  color: black;
+  text-decoration: none;
+  text-align: center
 }
 
 /*
@@ -98,11 +79,11 @@ a:hover{
 */
 
 #greynav ul ul a:hover {
-    background: lightgrey;
+  background: lightgrey;
 }
 
 #greynav ul a:hover {
-    color: darkgrey;
+  color: darkgrey;
 }
 aside {
   float: left;
@@ -124,8 +105,27 @@ aside {
 figure{
   text-align: center;
 }
-input {
+.inputcontainer {
   float: right;
+}
+#searchbar {
+  position: relative;
+  float: left;
+  padding: 15px;
+  font-size: 15px;
+}
+#button {
+  float: right;
+  background-color: darkgrey;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 .itemListingCol{
   float: left;

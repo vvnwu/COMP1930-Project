@@ -5,6 +5,8 @@
 	<title>ToBeDetermine</title>
 	<link rel= "stylesheet" href="BrowserCss.CSS" />
 	
+
+
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
 	<script>
 	  // Initialize Firebase
@@ -19,83 +21,60 @@
 	  firebase.initializeApp(config);
 	</script>
   
-  <style>
-    #container1 {
-      border: 1px solid black;
-      height: 300px;
-      width: 300px;
-      position: relative;
-    }
-    #container2 {
-      border: 1px solid black;
-      height: 300px;
-      width: 300px;
-      position: relative;
-    }
-    #container3 {
-      border: 1px solid black;
-      height: 300px;
-      width: 300px;
-      position: relative;
-    }
-  </style>
 </head>
-  
-  
-  
 <body>
-  <div id ="content">
-	<header>
-		<input type = "text" placeholder="Search.." name="Search">
-		<nav id= "featureMenu">
-			<li><a href="">BROWSE</a></li>
-			<li><a href="">ABOUT</a></li>
-			<li><a href="">HOME</a></li>
-			<li><a href="">HISTORY</a></li>
-			<li><a href="">UPCYCLE</a></li>
-		</nav>
-		<nav id="greynav">
-        <ul>
-          <li><a href="#">Mens</a>
-            <ul>
-              <li><a href="#">Outerwear</a></li>
-              <li><a href="#">Tops</a></li>
-              <li><a href="#">Bottoms</a></li>
-              <li><a href="#">Shoes</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Womens</a>
-            <ul>
-              <li><a href="#">Outerwear</a></li>
-              <li><a href="#">Tops</a></li>
-              <li><a href="#">Bottoms</a></li>
-              <li><a href="#">Shoes</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Neutral</a>
-            <ul>
-              <li><a href="#">Outerwear</a></li>
-              <li><a href="#">Tops</a></li>
-              <li><a href="#">Bottoms</a></li>
-              <li><a href="#">Shoes</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Kids</a>
-            <ul>
-              <li><a href="#">Outerwear</a></li>
-              <li><a href="#">Tops</a></li>
-              <li><a href="#">Bottoms</a></li>
-              <li><a href="#">Shoes</a></li>
-            </ul>
-          </li>
-        </ul>
-    </nav>
-	</header>
   
-	<div id="container1">Jethro</div>
-  <div id="container2">Vivian</div>
-  <div id="container3">Louis</div>
-    
+ <div id="container">
+	<header>
+    <nav id= "featureMenu">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="browse.html">BROWSE</a></li>
+        <li><a href="upcycle.html">UPCYCLE</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </nav>
+      <div class="inputcontainer">
+        <input id="searchbar" type = "text" placeholder="Search Clothes" name="Search">
+        <input id="button" type="submit" id="submit" name="SEARCH" value="Submit"/>
+      </div>
+      <nav id="greynav">
+          <ul>
+            <li><a href="#">Mens</a>
+              <ul>
+                <li><a href="#">Outerwear</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Womens</a>
+              <ul>
+                <li><a href="#">Outerwear</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Neutral</a>
+              <ul>
+                <li><a href="#">Outerwear</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Kids</a>
+              <ul>
+                <li><a href="#">Outerwear</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Shoes</a></li>
+              </ul>
+            </li>
+          </ul>
+      </nav>
+	</header>
   </div>
+
+  <div class=""></div>
 </body>
 </html>
