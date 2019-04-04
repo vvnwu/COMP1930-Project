@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<!--jquery-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
 	<script>
 	  // Initialize Firebase
@@ -263,25 +262,60 @@
 								figure[i].appendChild(itemDescription[i]);
 					}
 			/*items' type accessing from firebase
-			 *currently only have 2 data
 			 */
 			var itemTypeData = [];
 			for (i = 0; i< 8 ; i++){
 			itemTypeData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("type");
 			}
 			/*items' price accessing from firebase
-			 *currently only have 2 data
 			 */
 			var itemPriceData = [];
 			for (i = 0; i< 8 ; i++){
 			itemPriceData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("price");
 			}
+			/*items' color accessing from firebase
+			 */
+			var itemColorData = [];
+			for (i = 0; i< 8 ; i++){
+			itemColorData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("color");
+			}
+			/*items' lister(seller) accessing from firebase
+			 */
+			var itemListerData = [];
+			for (i = 0; i< 8 ; i++){
+			itemListerData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("lister");
+			}
+			/*items' tag(category) accessing from firebase
+			 */
+			var itemTagData = [];
+			for (i = 0; i< 8 ; i++){
+			itemTagData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("tag");
+			}
+			/*items' size accessing from firebase
+			 */
+			var itemSizeData = [];
+			for (i = 0; i< 8 ; i++){
+			itemSizeData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("size");
+			}
+			
+
+
+			/*items' image accessing from firebase
+			var itemImageData = [];
+			for (i = 0; i< 8 ; i++){
+			itemPriceData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("price");
+			} 
+			*/
 			//helper method to listen from database
+
+			var itemObjs= {type:"", price:"", color:"", lister:"", tag:"", size:[]}; //missing image
+			console.log("HELLO");
 			var listening = function(number){
 				itemTypeData[number].on(
 					'value', 
 					function(snap){
 						itemDescription[number].innerText = snap.val();
+						itemObjs.type= snap.val();
 					});
 				itemPriceData[number].on(
 					'value', 
@@ -292,6 +326,7 @@
 			for(i= 0; i < 8; i++){
 			listening(i);
 			}
+			console.log("item is :" + itemObjs.type);
 	</script>
 
 </body>

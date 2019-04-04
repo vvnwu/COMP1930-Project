@@ -20,11 +20,11 @@ aside{
 fieldset{
 	width: 50%;
 }
-#sizeSelect{
+#itemSize{
 	width: 80%;
 	float: right;
 }
-#color{
+#labelColor{
 	width: 80%;
 	float: right;
 }
