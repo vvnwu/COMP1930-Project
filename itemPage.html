@@ -9,6 +9,7 @@
     
 <body>
 <header>
+    <header>
     <div id="container">
       
       <nav id= "featureMenu">
@@ -59,6 +60,7 @@
       </nav>
     </div>
 	</header>
+    </header>
     
     <div id="itemSell">
         <aside>
@@ -85,9 +87,10 @@
                     <input type="color" name="color" id="color"/>
                 </fieldset>
                 <br><br>
-                <input type="button" name="submit" id="submit" value="Submit"/>
+                <input type="button" name="addToCart" id="addToCart" value="Add to cart"/>
             </form>
 
+<!--
             <div id="reviews">
                 <h1>Reviews</h1>
                 <hr>
@@ -96,7 +99,7 @@
                     <div class="nameAndReview">
                     <h3>Name</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                </div>
+                    </div>
                 </div>
                 <div class="review">
                     <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class= "reviewerImg">
@@ -104,7 +107,7 @@
 
                     <h3>Name</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-                </div>
+                    </div>
                 </div>
                 <div class="review">
                     <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class= "reviewerImg">
@@ -115,11 +118,25 @@
                     </div>
                 </div>
             </div>
+-->
         </div> 
 
     </div>
     
     <script>
+        var item = localStorage.getItem("item");
+        
+        /*
+        item.price
+        item.color
+        item.type
+        item.size
+        item.tag
+        item.lister
+        item.image
+        */
+        
+
     </script>
 
 </body>
