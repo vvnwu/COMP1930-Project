@@ -4,8 +4,10 @@
 
 	<title>ToBeDetermine</title>
 	<link rel= "stylesheet" href="BrowserCss.CSS" />
-	
-
+	<!--filter and cart icon-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!--jquery-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
 	<script>
@@ -20,6 +22,57 @@
 	  };
 	  firebase.initializeApp(config);
 	</script>
+
+
+	<style>
+		
+
+		#currentCloset{
+        display: flex;
+        flex-flow: column;
+        background-color:pink;
+        height: 50%;
+
+    }
+
+    .cartItem{
+        width:inherit;
+    /*    display:flex;*/
+        font-size: 10pt;
+        justify-content: space-around;
+
+    }
+
+    .cartItem>img{
+        height:50px;
+        width: 50px;
+    }
+    .cartItem>*{
+        display:inline-block;
+        }
+		#cartDiv{
+			display: none;
+		}
+    .welcomebar {
+      border: 1px solid black;
+      height: 300px;
+      width: 80%;
+      background-repeat:round;
+      background-size: 700px;
+      background-image: url("https://pixc.com/blog/wp-content/uploads/2015/08/clothing-header-image.jpg");
+      float: right;
+      margin-right: 30px;
+    }
+    .welcomebar h1 {
+      margin: 0 auto;
+      text-align: center;
+      vertical-align: middle;
+      margin-top: 100px;
+      font-size: 42pt;
+      color: burlywood;
+      text-shadow: 0 0 5px #000;
+    }
+	</style>
 
 </head>
 <body>
@@ -77,20 +130,129 @@
 	</header>
   
 	<aside>
-		<p>FILTERS APPLIED</p>
-		<hr>
-		<p id= filtersApplied></p>
-		<p>FILTERS</p>
-		<hr>
-		<ul>
-			<li id="filter_size">Size </li>
-			<li id="filter_brand">Brand</li>
-			<li id="filter_style">Style</li>
-			<li id="filter_color">Colour</li>
-			<li id= "filter_price">Price Range</li>
-		</ul>
+		    <div>
+            <i id = "filterButton" class="fas fa-filter"></i>
+            <i id = "orderButton" class="fas fa-shopping-basket"></i>
+        </div>
+	    <div id= "filterDiv">
+			<p>FILTERS APPLIED</p>
+			<hr>
+			<p id= filtersApplied></p>
+			<p>FILTERS</p>
+			<hr>
+			<ul>
+				<li id="filter_size">Size </li>
+				<li id="filter_brand">Brand</li>
+				<li id="filter_style">Style</li>
+				<li id="filter_color">Colour</li>
+				<li id= "filter_price">Price Range</li>
+			</ul>
+		</div>
+		<div id= "cartDiv">
+			<p>CURRENT ORDER</p>
+			<hr>
+			<p id= "closet">CLOSET ( to borrow )</p>
+	        <div id="currentCloset">
+	            <div class="cartItem" id="closet0">
+	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+	                <div>
+	                    <p class ="price">$15.00 / 2 weeks</p>
+	                    <p class ="size">S</p>
+	                </div>   
+	            </div>
+	            
+	            <div class="cartItem" id="closet1">
+	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+	                <div>
+	                    <p class ="price">$15.00 / 2 weeks</p>
+	                    <p class ="size">M</p>
+	                </div>   
+	            </div>
+	            
+	             <div class="cartItem" id="closet2">
+	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+	                <div>
+	                    <p class ="price">$15.00</p>
+	                    <p class ="size">L</p>
+	                </div>   
+	            </div>
+	        </div>
+	            
+			<p id = "cart">CART ( to keep )</p>
+	        <div id="currentCart">
+	             <div class="cartItem" id="cart0">
+	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+	                <div>
+	                    <p class ="price">$15.00</p>
+	                    <p class ="size">S</p>
+	                </div>   
+	            </div>
+	            
+	            <div class="cartItem" id="cart1">
+	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+	                <div>
+	                    <p class ="price">$15.00</p>
+	                    <p class ="size">M</p>
+	                </div>   
+	            </div>
+	            
+	             <div class="cartItem" id="cart2">
+	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
+	                <div>
+	                    <p class ="price">$15.00</p>
+	                    <p class ="size">L</p>
+	                </div>   
+	            </div>
+	        </div>
+			<button id= "checkoutForCart">Checkout</button>
+		</div>
 	</aside>
+	<!--script for cart and closet-->
+	<script type="text/javascript">
+		//mouse action when click
+		$("#orderButton").click(function(event){
+			$("#filterDiv").css({"display": "none"});
+			$("#cartDiv").css({"display": "inline"});
+		});
+		
+		$("#filterButton").click(function(event){
+			$("#filterDiv").css({"display": "inline"});
+			$("#cartDiv").css({"display": "none"});
+		});
 
+		$("#checkoutForCart").click(function(event){
+			var closetItems = [];
+			var cartItems = [];
+			var currentItem;
+			for(i = 0; i < 3; i ++){
+				currentItem = document.getElementById("closet"+ i);
+				closetItems[i].color;
+				closetItems[i].price;
+				closetItems[i].size;
+				closetItems[i].type;
+
+			}
+
+		});
+		//icon mouse action display effect
+		$("#orderButton").mousedown(function(){
+			$("#orderButton").css({"color": "grey"});
+		});
+		$("#orderButton").mouseup(function(){
+			$("#orderButton").css({"color": "black"});
+		});
+		$("#filterButton").mousedown(function(){
+			$("#filterButton").css({"color": "grey"});
+		});
+		$("#filterButton").mouseup(function(){
+			$("#filterButton").css({"color": "black"});
+		});
+	</script>
+  
+  <div class="welcomebar">
+    <h1>Welcome to Our Online Thrift Store!</h1>
+  </div>
+  
 	<script type="text/javascript">
 			//listing items using javascript
 			var content = document.createElement("div");
