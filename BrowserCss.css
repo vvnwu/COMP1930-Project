@@ -1,3 +1,7 @@
+* {
+  font-family: sans-serif;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -56,6 +60,7 @@ a:hover{
 #greynav  li  {
   float: none;
   position: relative;
+  padding: 0;
 }
 
 #greynav > ul > li {
