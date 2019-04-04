@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>dbReadingTest</title>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
         <script>
           // Initialize Firebase
@@ -16,14 +16,83 @@
           };
           firebase.initializeApp(config);
         </script>
+        <style>
+            .cartItem{
+                width:inherit;
+            /*    display:flex;*/
+                font-size: 10pt;
+                justify-content: space-around;
+
+            }
+
+            .cartItem>img{
+                height:50px;
+                width: 50px;
+            }
+            .cartItem>*{
+                display:inline-block;
+            }
+        </style>
     </head>
     
     <body>
+        <div id="content"></div>
         
         <script>
-            var body = document.body;
-            body.appendChild("hello");
+            function Item(type,lister,tags,sizes,colors,image,price){
+                this.type = type,
+                this.lister = lister,
+                this.tags = tags,
+                this.colors = colors,
+                this.image = image,
+                this.price = price,
+                this.displayBrowse = function (){
+//                    let container = $("<div id = 'displayBrowse' class = 'browseItem'></div>");
+//                    
+//                    container.append();
+//                    let figure = $("<figure></figure>")
+//                    
+//                    var item = document.createElement("img");
+//                    item[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
+//                    itemDescription[i] = document.createElement("figcaption");
+//                    itemDescription[i].innerText = "Item Description #" + (i+1);
+//                    itemDescription[i].setAttribute("id", "itemDescription" + i);
+
+                },
+                this.displayItempage = function (){
+                    var container = document.createElement("div");
+                    
+                    
+                },
+                this.displayCart = function(){
+                    var container = $("<div class = 'cartItem'></div>").append($("<img src = "+image+" alt = 'image of clothing item'>"));
+                    
+                    var text = $("<div></div>");
+                    text.append($("<p class = 'price'>"+price+"</p>"));
+                    text.append($("<p class ='size'>"+sizes+"</p>"));
+                    
+                    container.append(text);
+                    
+                    return container;
+                    
+                }
+                
+            }
             
+            var dbItemsRef = firebase.database().ref().child("items");
+            
+            dbItemsRef.on(
+                "value",
+                function(snap) {
+                    console.log("Get items successful!");
+                    console.log(snap);
+                });
+            
+            
+            
+            var test1 = new Item("shirt", "wuviv", [], ["s","m"], "black", "https://dummyimage.com/50x50/000/fff", "$15.00");
+            console.log(test1);
+            $("#content").append(test1.displayCart());
         </script>
     </body>
 </html>
