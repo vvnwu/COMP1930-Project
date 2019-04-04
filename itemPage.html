@@ -9,46 +9,56 @@
     
 <body>
     <header>
-		<nav id= "featureMenu">
-			<a href="">BROWSE</a>
-			<a href="">ABOUT</a>
-			<a href="">HOME</a>
-			<a href="">HISTORY</a>
-			<a href="">UPCYCLE</a>
-		</nav>
-		<nav id= "greynav">
-        <ul>
-			<li><a href="">MENS</a></li>
-				<!--<ul>
-        		<li>Outerwear</li>
-    		   	<li>Tops</li>
-    		    <li>Bottoms</li>
-    		    <li>Shoes</li>
-   			   	</ul>-->
-			<li><a href="">WOMENS</a></li>
-				<!--<ul>
-        		<li>Outerwear</li>
-       			<li>Tops</li>
-     		  	<li>Bottoms</li>
-     		   	<li>Shoes</li>
-     		  	</ul>-->
-			<li><a href="">NEUTRAL</a></li>
-				<!--<ul>
-        		<li>Outerwear</li>
-        		<li>Tops</li>
-        		<li>Bottoms</li>
-        		<li>Shoes</li>
-       			</ul>-->
-			<li><a href="">KIDS</a></li>
-				<!--<ul>
-        		<li>Outerwear</li>
-        		<li>Tops</li>
-        		<li>Bottoms</li>
-        		<li>Shoes</li>
-        </ul>-->
-      </ul>
-		</nav>
-	</header>
+    <div id="container">
+      
+      <nav id= "featureMenu">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="browse.html">BROWSE</a></li>
+        <li><a href="upcycle.html">UPCYCLE</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+      </nav>
+      <div class="inputcontainer">
+        <input id="searchbar" type = "text" placeholder="Search Clothes" name="Search">
+        <input id="button" type="submit" id="submit" name="SEARCH" value="Submit"/>
+      </div>
+      <nav id="greynav">
+          <ul>
+            <li><a href="#">Mens</a>
+              <ul>
+                <li><a href="#">Outerwear</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Womens</a>
+              <ul>
+                <li><a href="#">Outerwear</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Neutral</a>
+              <ul>
+                <li><a href="#">Outerwear</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Shoes</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Kids</a>
+              <ul>
+                <li><a href="#">Outerwear</a></li>
+                <li><a href="#">Tops</a></li>
+                <li><a href="#">Bottoms</a></li>
+                <li><a href="#">Shoes</a></li>
+              </ul>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    </header>
     
     <div id="itemSell">
         <aside>
@@ -75,7 +85,7 @@
                     <input type="color" name="color" id="color"/>
                 </fieldset>
                 <br><br>
-                <input type="button" name="submit" id="submit" value="Submit"/>
+                <input type="button" name="addToCart" id="addToCart" value="Add to cart"/>
             </form>
 
             <div id="reviews">
@@ -110,6 +120,19 @@
     </div>
     
     <script>
+        var item = localStorage.getItem("item");
+        
+        /*
+        item.price
+        item.color
+        item.type
+        item.size
+        item.tag
+        item.lister
+        item.image
+        */
+        
+
     </script>
 
 </body>
