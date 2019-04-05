@@ -186,6 +186,8 @@
 			<button id= "checkoutForCart">Checkout</button>
 		</div>
 	</aside>
+    <div id="content"></div>
+    
 	<!--script for cart and closet-->
 	<script type="text/javascript">
 		//mouse action when click
@@ -227,6 +229,74 @@
 			$("#filterButton").css({"color": "black"});
 		});
 	</script>
+    <!-- script for item population via class-->
+    <script>
+        function Item(obj){
+                this.type = obj.type,
+                this.lister = obj.lister,
+                this.tags = obj.tags,
+                this.colors = obj.colors,
+                this.image = obj.image,
+                this.price = obj.price,
+                this.sizes = obj.sizes,
+                    
+                this.displayBrowse = function (){
+                    var container = $("<figure></figure>").append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
+                    
+                    var text = $("<figcaption></figcaption>");
+                    text.append($("<p class = 'type'>"+this.type+"</p>"));
+                    text.append($("<p class ='price'>"+this.price+"</p>"));
+                    
+                    container.append(text);
+                    
+                    container.click(function(){
+                        console.log("hello");
+                    });
+                    
+                    return container;
+
+                },
+                this.displayItempage = function (){
+                    var container = document.createElement("div");
+                    
+                    
+                },
+                this.displayCart = function(){
+                    var container = $("<div class = 'cartItem'></div>").append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
+                    
+                    var text = $("<div></div>");
+                    text.append($("<p class = 'price'>"+this.price+"</p>"));
+                    text.append($("<p class ='size'>"+this.sizes+"</p>"));
+                    
+                    container.append(text);
+                    
+                    container.click(function(){
+                        console.log("hello");
+                    });
+                    
+                    return container;
+                    
+                }
+                
+            }
+            
+            
+            var dbItemsRef = firebase.database().ref().child("items");
+            
+            dbItemsRef.on(
+                "value",
+                function(snap) {
+                    console.log("Get items successful!");
+                    console.log(snap.val());
+                    snap.val().forEach(function(element){
+                        let temp = new Item(element);
+                        console.log(temp);
+                        $("#content").append(temp.displayBrowse());
+                    })
+                });
+    </script>
+    
+<!--
 	<script type="text/javascript">
 			//listing items using javascript
 			var content = document.createElement("div");
@@ -350,6 +420,7 @@
 
 
 	</script>
+-->
 
 </body>
 </html>
