@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<!--jquery-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
 	<script>
 	  // Initialize Firebase
@@ -237,20 +236,49 @@
 								figure[i].appendChild(item[i]);
 								figure[i].appendChild(itemDescription[i]);
 					}
+
+
 			/*items' type accessing from firebase
-			 *currently only have 2 data
 			 */
 			var itemTypeData = [];
 			for (i = 0; i< 8 ; i++){
-			itemTypeData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("type");
+			itemTypeData[i] = firebase.database().ref().child("items").child(i).child("type");
 			}
 			/*items' price accessing from firebase
-			 *currently only have 2 data
 			 */
 			var itemPriceData = [];
 			for (i = 0; i< 8 ; i++){
-			itemPriceData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("price");
+			itemPriceData[i] = firebase.database().ref().child("items").child(i).child("price");
 			}
+			/*items' size accessing from firebase
+			 */
+			var itemSizeData = [];
+			for (i = 0; i< 8 ; i++){
+			itemSizeData[i] = firebase.database().ref().child("items").child(i).child("size");
+			}
+			/*items' color accessing from firebase
+			 */
+			var itemColorData = [];
+			for (i = 0; i< 8 ; i++){
+			itemColorData[i] = firebase.database().ref().child("items").child(i).child("color");
+			}
+			/*items' lister accessing from firebase
+			 */
+			var itemListerData = [];
+			for (i = 0; i< 8 ; i++){
+			itemListerData[i] = firebase.database().ref().child("items").child(i).child("lister");
+			}
+			/*items' tag accessing from firebase
+			 */
+			var itemTagData = [];
+			for (i = 0; i< 8 ; i++){
+			itemTagData[i] = firebase.database().ref().child("items").child(i).child("tag");
+			}
+
+			/*This itemObj variable stores all the attribute of the item, then ready to store in local storage.
+			*/
+			var itemObj = new Object(); 
+
 			//helper method to listen from database
 			var listening = function(number){
 				itemTypeData[number].on(
@@ -263,10 +291,110 @@
 					function(snap){
 						itemDescription[number].innerText += "_Price:" +snap.val();
 					});
+				itemSizeData[number].on(
+					'value', 
+					function(snap){
+						snap.val();
+					});
+				itemColorData[number].on(
+					'value', 
+					function(snap){
+						snap.val();
+ 					});
+				itemTagData[number].on(
+					'value', 
+					function(snap){
+						snap.val();
+					});
+				itemListerData[number].on(
+					'value', 
+					function(snap){
+						snap.val();
+					});
+
 			}
+
+			//helper method to store data in localStorage
+				var itemObj = new Object(); 
+				var localStore = function(itemNumber) {
+
+					/*	This will be delete after everything work out!
+								/*var typeData = firebase.database().ref().child("items").child(itemNumber).child("type");
+								var priceData = firebase.database().ref().child("items").child(itemNumber).child("price");
+								var sizeData = firebase.database().ref().child("items").child(itemNumber).child("size");
+								var colorData = firebase.database().ref().child("items").child(itemNumber).child("color");
+								var listerData = firebase.database().ref().child("items").child(itemNumber).child("lister");*/
+								/*var promise = new Promise(function(resolve, reject) {
+								resolve(typeData.on('value', function(snap){
+									itemObj["type"] = snap.val();
+								}));
+								resolve(priceData.on('value', function(snap){
+									itemObj["price"] = snap.val();
+								}));
+								resolve(sizeData.on('value', function(snap){
+									itemObj["size"] = snap.val();
+								}));
+								resolve(colorData.on('value', function(snap){
+									itemObj["color"] = snap.val();
+								}));
+								resolve(listerData.on('value', function(snap){
+									itemObj["lister"] = snap.val();
+								}));
+								});
+					*/
+
+					//retirve data and store in itemObj
+					itemTypeData[itemNumber].on('value', function(snap){
+					itemObj["type"] = snap.val();
+					});
+					itemPriceData[itemNumber].on('value', function(snap){
+					itemObj["price"] = snap.val();
+					});
+					itemSizeData[itemNumber].on('value', function(snap){
+					itemObj["size"] = snap.val();
+					});
+					itemColorData[itemNumber].on('value', function(snap){
+					itemObj["color"] = snap.val();
+					});
+					itemListerData[itemNumber].on('value', function(snap){
+					itemObj["lister"] = snap.val();
+					});
+
+					//store in local storage
+					var testing = JSON.stringify(itemObj);
+					localStorage.setItem("item123",testing);
+					console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
+				
+					//to other page
+					  location.replace("itemPage.html")
+
+
+			}
+			
+			//call listening
 			for(i= 0; i < 8; i++){
 			listening(i);
 			}
+
+			//figure on click
+			figure[0].addEventListener("click", function(){
+			localStore(0)});
+			figure[1].addEventListener("click", function(){
+			localStore(1)});
+			figure[2].addEventListener("click", function(){
+			localStore(2)});
+			figure[3].addEventListener("click", function(){
+			localStore(3)});
+			figure[4].addEventListener("click", function(){
+			localStore(4)});
+			figure[5].addEventListener("click", function(){
+			localStore(5)});
+			figure[6].addEventListener("click", function(){
+			localStore(6)});
+			figure[7].addEventListener("click", function(){
+			localStore(7)});
+
+
 	</script>
 
 </body>

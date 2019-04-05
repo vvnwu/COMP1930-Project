@@ -4,6 +4,8 @@
 	<title>Item page</title>
     <link rel= "stylesheet" href="BrowserCss.css">
     <link rel= "stylesheet" href="itemPageCss.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 
 </head>
     
@@ -64,13 +66,13 @@
         <aside>
         <figure id="itemFigure">
             <img src= "https://dummyimage.com/300x400/000/fff" alt="dummyImage">
-            <figcaption><b>Price: </b>$ ##.## /week</figcaption>
+            <figcaption><b>Price: </b> <span id= "itemPrice">$##.##</span> /week</figcaption>
         </figure>
         </aside>
         <div id= "detailsWithReviews">
             <div id="details">
-                <h1 id="itemName">Item Name</h1><hr>
-                <h2><b>Listed By:</b> name</h2>
+                <h1 id="itemType">Item Name</h1><hr>
+                <h2><b>Listed By:</b> <span id= "itemLister">name</span></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
             </div>
             <form>
@@ -85,12 +87,19 @@
                     </select><br><br>
                     <label>Color</label>
                     <input type="color" name="color" id="color"/>
+                    <label id= "labelSize">Size: </label>
+                    <select id= "itemSize" name="size" title="name">
+                        <!--<option value="s">Small</option>
+                        <option value="m">Medium</option>
+                        <option value="l">Large</option> -->
+                    </select><br><br>
+                    <label id= "labelColor">Color: <span id= "itemColor">ColorValue</span> </label>
                 </fieldset>
                 <br><br>
                 <input type="button" name="addToCart" id="addToCart" value="Add to cart"/>
             </form>
 
-<!--
+
             <div id="reviews">
                 <h1>Reviews</h1>
                 <hr>
@@ -124,8 +133,33 @@
     </div>
     
     <script>
-        var item = localStorage.getItem("item");
-        
+
+        //setting every attribute of item using localStorage that passed from browser.
+        var itemData = JSON.parse(localStorage.getItem("item123"));
+        $("#itemType").html(itemData.type);
+        $("#itemPrice").html(itemData.price);
+        $("#itemLister").html(itemData.lister);
+        $("#itemColor").html(itemData.color);
+        $("#itemSize").html(itemData.size);
+
+        //adding option to size dropDown menu
+        var itemSizeArray = [];
+        for(i=0; i< itemData.size.length; i++){
+            itemSizeArray[i]= document.createElement("option");
+            itemSizeArray[i].innerText= itemData.size[i];
+            if(itemData.size[i]=="S")
+            itemSizeArray[i].setAttribute("value", "s");
+            else if(itemData.size[i]=="L")
+            itemSizeArray[i].setAttribute("value", "l");
+            else {
+            itemSizeArray[i].setAttribute("value", "m");
+            }
+        }
+        var itemSizeSelect = document.getElementById("#itemSize");
+        for( i = 0; i < itemSizeArray.size; i++){
+        itemSizeSelect.appendChild(itemSizeArray[i]);
+        }
+
         /*
         item.price
         item.color
@@ -137,6 +171,12 @@
         */
         
 
+    </script>
+
+    <script type="text/javascript">
+        $("#addToCart").click(function(){
+            //go back to browser page and add to cart.(local storage)
+        });
     </script>
 
 </body>
