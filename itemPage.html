@@ -125,12 +125,13 @@
     <script>
 
         //setting every attribute of item using localStorage that passed from browser.
-        var itemData = localStorage.getItem("item");
-        $("#itemType").innerText(itemData.type);
-        $("#itemPrice").innerText(itemData.price);
-        $("#itemLister").innerText(itemData.lister);
-        $("#itemColor").innerText(itemData.color);
-        
+        var itemData = JSON.parse(localStorage.getItem("item123");
+        $("#itemType").html(itemData.type);
+        $("#itemPrice").html(itemData.price);
+        $("#itemLister").html(itemData.lister);
+        $("#itemColor").html(itemData.color);
+        $("#itemSize").html(itemData.size);
+
         //adding option to size dropDown menu
         var itemSizeArray = [];
         for(i=0; i< itemData.size.length; i++){
@@ -145,7 +146,7 @@
             }
         }
         var itemSizeSelect = document.getElementById("#itemSize");
-        for(int i = 0; i < itemSizeArray.size; i++){
+        for( i = 0; i < itemSizeArray.size; i++){
         itemSizeSelect.appendChild(itemSizeArray[i]);
         }
 
