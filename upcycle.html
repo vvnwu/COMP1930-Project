@@ -4,36 +4,6 @@
 	<title>Upcycle Page</title>
     <link rel= "stylesheet" href="BrowserCss.css">
     <link rel= "stylesheet" href="itemPageCss.css">
-    <style>
-    input[type=text], select {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-     #subm {
-      width: 100%;
-      background-color: dimgrey;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    input[type=submit]:hover {
-      background-color: #45a049;
-    }
-    #form {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    } 
-    </style>
 </head>
     
 <body>
@@ -93,7 +63,7 @@
         <aside>
         <figure id="itemFigure">
             <img src= "https://dummyimage.com/300x400/000/fff" alt="dummyImage">
-            <input type="button" name="submit" id="submit" value="Upload Image"/>
+            <figcaption><input type="button" name="submit" id="submit" value="Upload Image"/></figcaption>
         </figure>
         </aside>
         <div id= "detailsWithReviews">
@@ -101,13 +71,12 @@
             <div id="form">
                 <h1 id="itemName">Upcycle Item</h1><hr>
                   <label for="fname">Item Name:</label>
-                  <input type="text" id="fname" name="firstname">
+                  <input type="text" class="upcycle" name="firstname">
                   <label for="lname">Brand:</label>
-                  <input type="text" id="brand" name="brand" >
+                  <input type="text" class="upcycle" name="brand" >
                   <label for="lname">Type:</label>
-                  <input type="text" id="type" name="type">
-                  <label for="lname"></label>
-                  <label id= "labelSize">Size:</label>
+                  <input type="text" class="upcycle" name="type">
+                  <label id= "labelSize">Size:</label><br/>
                   <select id= "sizeSelect" name="size" title="name">
                     <option value="s">X-Small</option>
                     <option value="s">Small</option>
@@ -115,9 +84,9 @@
                     <option value="l">Large</option>
                     <option value="s">X-Large</option>
                   </select><br><br>
-                  <label>Color</label>
+                  <label type="text">Color:</label><br>
                   <input type="color" name="color" id="color"/>
-            </div>
+          </div>
             <form>
                 <br><br>
                 <input id="subm" type="button" name="submit" id="submit" value="Submit"/>
