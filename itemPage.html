@@ -65,7 +65,7 @@
     <div id="itemSell">
         <aside>
         <figure id="itemFigure">
-            <img src= "https://dummyimage.com/300x400/000/fff" alt="dummyImage">
+            <img id="itemImage" src= "https://dummyimage.com/300x400/000/fff" alt="dummyImage">
             <figcaption><b>Price: </b> <span id= "itemPrice">$##.##</span> /week</figcaption>
         </figure>
         </aside>
@@ -131,6 +131,7 @@
         $("#itemLister").html(itemData.lister);
         $("#itemColor").html(itemData.color);
         $("#itemSize").html(itemData.size);
+        $("#itemImage").attr("src",itemData.image);
 
         //adding option to size dropDown menu
         var itemSizeArray = [];
@@ -149,6 +150,14 @@
         for( i = 0; i < itemSizeArray.size; i++){
         itemSizeSelect.appendChild(itemSizeArray[i]);
         }
+        
+        $("#addToCart").click(function(){
+            //go back to browser page and add to cart.(local storage)
+            let cart = JSON.parse(localStorage.getItem("cart"));
+            cart.push(itemData);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            location.replace("browse.html");
+        });
 
         /*
         item.price
@@ -164,9 +173,7 @@
     </script>
 
     <script type="text/javascript">
-        $("#addToCart").click(function(){
-            //go back to browser page and add to cart.(local storage)
-        });
+        
     </script>
 
 </body>
