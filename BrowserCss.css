@@ -1,6 +1,7 @@
 * {
   font-family: sans-serif;
 }
+
 figure{
   text-align: center;
 }
@@ -15,6 +16,10 @@ figure > img{
     flex-wrap: wrap;
 }
 
+body {
+  margin: 0;
+}
+
 a {
   text-decoration: none;
   color: black;
@@ -24,8 +29,6 @@ a:hover{
 }
 #featureMenu {
   margin-top: 0px;
-  padding: 0 0 0 0;
-  width: 100%;
   justify-content: flex-end;
   display: flex;
   margin: 25px;
@@ -33,6 +36,7 @@ a:hover{
 #featureMenu ul {
   margin: 40px;
   text-transform: uppercase;
+  
 }
 #featureMenu li {
   display: inline;
@@ -57,11 +61,11 @@ a:hover{
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  margin-right: 50px;
 }
 
 #greynav > ul > li > ul {
   top: 100%;
+  right: 30;
 }
 
 #greynav li:hover > ul {
@@ -87,7 +91,7 @@ a:hover{
   padding: 30px;
   color: black;
   text-decoration: none;
-  text-align: center
+  text-align: left;
 }
 
 /*
@@ -97,7 +101,7 @@ a:hover{
 */
 
 #greynav ul ul a:hover {
-  background: lightgrey;
+  color: darkgrey;
 }
 
 #greynav ul a:hover {
@@ -127,8 +131,10 @@ aside {
 #searchbar {
   position: relative;
   float: left;
-  padding: 15px;
+  padding: 14px;
   font-size: 15px;
+  width: 150px;
+  margin: 9px 0px;
 }
 #button {
   float: right;
@@ -140,7 +146,7 @@ aside {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 9px 0px;
   cursor: pointer;
 }
 .itemListingCol{
@@ -148,4 +154,29 @@ aside {
   width: 20%;
   padding: 5px;
 }
+#currentCloset{
+display: flex;
+flex-flow: column;
+background-color:pink;
+height: 50%;
+
+}
+
+.cartItem{
+width:inherit;
+/*    display:flex;*/
+font-size: 10pt;
+justify-content: space-around;
+
+}
+
+.cartItem>img{
+height:50px;
+width: 50px;
+}
+.cartItem>*{
+display:inline-block;
+}
+#cartDiv{
+display: none;
 
