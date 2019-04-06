@@ -78,7 +78,7 @@
             <form>
                 <fieldset>
                     <label id= "labelSize">-Size </label>
-                    <select id= "itemSize" name="size" title="name">
+                    <select id= "itemSizeSelect" name="size" title="name">
                         <!--<option value="s">Small</option>
                         <option value="m">Medium</option>
                         <option value="l">Large</option> -->
@@ -131,22 +131,27 @@
         $("#itemLister").html(itemData.lister);
         $("#itemColor").html(itemData.color);
         $("#itemSize").html(itemData.size);
-
         //adding option to size dropDown menu
         var itemSizeArray = [];
         for(i=0; i< itemData.size.length; i++){
             itemSizeArray[i]= document.createElement("option");
-            itemSizeArray[i].innerText= itemData.size[i];
-            if(itemData.size[i]=="S")
+            if(itemData.size[i]=="S"){
             itemSizeArray[i].setAttribute("value", "s");
-            else if(itemData.size[i]=="L")
+            itemSizeArray[i].text = "small";
+
+            }
+            else if(itemData.size[i]=="L"){
             itemSizeArray[i].setAttribute("value", "l");
-            else {
+            itemSizeArray[i].text = "large";
+
+            }else {
             itemSizeArray[i].setAttribute("value", "m");
+            itemSizeArray[i].text = "medium";
+
             }
         }
-        var itemSizeSelect = document.getElementById("#itemSize");
-        for( i = 0; i < itemSizeArray.size; i++){
+        var itemSizeSelect = document.getElementById("itemSizeSelect");
+        for( i = 0; i < itemSizeArray.length; i++){
         itemSizeSelect.appendChild(itemSizeArray[i]);
         }
 

@@ -20,13 +20,13 @@ aside{
 fieldset{
 	width: 50%;
 }
-#itemSize{
+#itemSizeSelect{
 	width: 80%;
 	float: right;
 }
 #labelColor{
 	width: 80%;
-	float: right;
+	float: left;
 }
 
 #reviews{
@@ -43,4 +43,8 @@ fieldset{
 .nameAndReview{
 	width: 80%;
 	float: right;
+}
+#itemColor{
+	width: 80%;
+	text-align: center;
 }
