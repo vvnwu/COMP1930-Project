@@ -12,8 +12,10 @@ figure > img{
 
 #content{
     display: flex;
-    width: 1000px;
+    /*width: 1000px;*/
     flex-wrap: wrap;
+    border-left: 1px solid black;
+
 }
 
 body {
@@ -115,8 +117,7 @@ aside {
   text-transform: uppercase;
   clear: right;
   height: inherit;
-  border-right: 1px solid black;
-  height: 100vh;
+  height: 100%;
 
 }
 #filters {
