@@ -147,6 +147,9 @@
 
         if(lister=="" || price =="" || type =="" || tag=="" ||!checkSize){
           alert("please input your value");
+        } else if (isNaN(parseFloat(price))){
+          alert("please input integer in price");
+
         } else {
           price = "$" + price;
 
