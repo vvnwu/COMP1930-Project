@@ -4,6 +4,10 @@
 	<title>Upcycle Page</title>
     <link rel= "stylesheet" href="BrowserCss.css">
     <link rel= "stylesheet" href="itemPageCss.css">
+    <link rel= "stylesheet" href="upcycle.css">
+    <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
+    <script src= "Firebase_calls.js"></script>
+
 </head>
     
 <body>
@@ -70,33 +74,107 @@
           
             <div id="form">
                 <h1 id="itemName">Upcycle Item</h1><hr>
-                  <label for="fname">Item Name:</label>
-                  <input type="text" class="upcycle" name="firstname">
-                  <label for="lname">Brand:</label>
-                  <input type="text" class="upcycle" name="brand" >
+                  <label for="fname">Your Name:</label>
+                  <input type="text" class="upcycle" id="lister">
+                  <label for="lname">price:</label>
+                  <input type="text" class="upcycle" id="price" >
                   <label for="lname">Type:</label>
-                  <input type="text" class="upcycle" name="type">
+                  <input type="text" class="upcycle" id="type">
+                  <label for="lname">Catagory:</label>
+                  <input type="text" class="upcycle" id="tag">
                   <label id= "labelSize">Size:</label><br/>
-                  <select id= "sizeSelect" name="size" title="name">
-                    <option value="s">X-Small</option>
-                    <option value="s">Small</option>
-                    <option value="m">Medium</option>
-                    <option value="l">Large</option>
-                    <option value="s">X-Large</option>
-                  </select><br><br>
+                  <div id="sizeCheckContainer">
+                    <input type="checkbox" id = "xs" value="XS">X-Small<br>
+                    <input type="checkbox" id = "s" value="S">Small<br>
+                    <input type="checkbox" id = "m" value="M" checked="true">Medium<br>
+                    <input type="checkbox" id = "l" value="L">Large<br>
+                    <input type="checkbox" id = "xl" value="XL">X-Large<br>
+                  </div>
+                  
+                  <br><br>
                   <label type="text">Color:</label><br>
-                  <input type="color" name="color" id="color"/>
+                  <input type="color" id="color" value="#ff00ff"/>
           </div>
-            <form>
+            <div>
                 <br><br>
-                <input id="subm" type="button" name="submit" id="submit" value="Submit"/>
-            </form>
+                <button id="subm" onclick="upload()">submit</button>
+            </div>
           
         </div> 
 
     </div>
     
     <script>
+      function upload(){
+        var lister = document.getElementById("lister").value;
+        var price = document.getElementById("price").value;
+        var type = document.getElementById("type").value;
+        var tag = document.getElementById("tag").value;
+
+        var size = [];
+        var count = 0;
+        var color = document.getElementById("color").value;
+        var checkSize = false;
+        if(document.getElementById("xs").checked){
+          size[count] = document.getElementById("xs").value;
+          count++;
+          checkSize = true;
+        }
+        if(document.getElementById("s").checked){
+          size[count] = document.getElementById("s").value;
+          count++;
+          checkSize = true;
+
+        }
+        if(document.getElementById("m").checked){
+          size[count] = document.getElementById("m").value;
+          count++;
+          checkSize = true;
+        }
+        if(document.getElementById("l").checked){
+          size[count] = document.getElementById("l").value;
+          count++;
+          checkSize = true;
+        }
+        if(document.getElementById("xl").checked){
+          size[count] = document.getElementById("xl").value;
+          count++;
+          checkSize = true;
+        }
+
+
+
+
+        if(lister=="" || price =="" || type =="" || tag=="" ||!checkSize){
+          alert("please input your value");
+        } else if (isNaN(parseFloat(price))){
+          alert("please input integer in price");
+
+        } else {
+          var numberOfItem = parseInt(localStorage.getItem("numberOfItem"));
+
+          price = "$" + price;
+
+          var dbItemsRef = firebase.database().ref("items/" + numberOfItem).set({
+            color: color,
+            image: "https://data.whicdn.com/images/228956393/large.png",
+            lister: lister,
+            price: price,
+            size: size,
+            tag: tag,
+            type: type
+          });
+          numberOfItem++;
+          localStorage.setItem("numberOfItem", numberOfItem);
+          ;
+          console.log(lister);
+          console.log(price);
+          console.log(type);
+          console.log(size);
+          console.log(color);
+        }
+
+      }
     </script>
 
 </body>
