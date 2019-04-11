@@ -182,6 +182,7 @@
 		$("#filterButton").click(function(event){
 			$("#filterDiv").css({"display": "inline"});
 			$("#cartDiv").css({"display": "none"});
+			localStorage.setItem("numberOfItem", 8);
 		});
 
 		$("#checkoutForCart").click(function(event){
@@ -212,6 +213,8 @@
 			$("#filterButton").css({"color": "black"});
 		});
 	</script>
+
+
     <!-- script for item population via class-->
     <script>
         function Item(obj){

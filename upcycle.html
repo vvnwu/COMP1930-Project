@@ -151,9 +151,11 @@
           alert("please input integer in price");
 
         } else {
+          var numberOfItem = parseInt(localStorage.getItem("numberOfItem"));
+
           price = "$" + price;
 
-          var dbItemsRef = firebase.database().ref("items/").push({
+          var dbItemsRef = firebase.database().ref("items/" + numberOfItem).set({
             color: color,
             image: "https://data.whicdn.com/images/228956393/large.png",
             lister: lister,
@@ -162,6 +164,9 @@
             tag: tag,
             type: type
           });
+          numberOfItem++;
+          localStorage.setItem("numberOfItem", numberOfItem);
+          ;
           console.log(lister);
           console.log(price);
           console.log(type);
