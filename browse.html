@@ -10,18 +10,7 @@
 	<!--jquery-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-	<script>
-	  // Initialize Firebase
-	  var config = {
-	    apiKey: "AIzaSyDRuQ_z-_hbAaVdfEa_xwkV9xDZWKRHnv0",
-	    authDomain: "comp1930ee-project-33dd7.firebaseapp.com",
-	    databaseURL: "https://comp1930-project-33dd7.firebaseio.com",
-	    projectId: "comp1930-project-33dd7",
-	    storageBucket: "comp1930-project-33dd7.appspot.com",
-	    messagingSenderId: "1015530534917"
-	  };
-	  firebase.initializeApp(config);
-	</script>
+	<script src="Firebase_calls.js"></script>
 
 
 	<style>
@@ -132,33 +121,7 @@
 	        </div>
 	            
 			<p id = "cart">CART ( to keep )</p>
-	        <div id="currentCart">
-<!--
-	             <div class="cartItem" id="cart0">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00</p>
-	                    <p class ="size">S</p>
-	                </div>   
-	            </div>
-	            
-	            <div class="cartItem" id="cart1">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00</p>
-	                    <p class ="size">M</p>
-	                </div>   
-	            </div>
-	            
-	             <div class="cartItem" id="cart2">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00</p>
-	                    <p class ="size">L</p>
-	                </div>   
-	            </div>
--->
-	        </div>
+	        <div id="currentCart"></div>
 			<button id= "checkoutForCart">Checkout</button>
 		</div>
 	</aside>
@@ -217,8 +180,8 @@
     <!-- script for item population via class-->
     <script>
         class Item{
-//                type;lister;tags;colors;image;price;size;
                 constructor(obj) {
+                    this.obj = obj;
                     this.type = obj.type;
                     this.lister = obj.lister;
                     this.tags = obj.tags;
@@ -229,7 +192,8 @@
                 }
                
                     
-                displayBrowse = function (){
+                displayBrowse(){
+                    var objString = JSON.stringify(this.obj);
                     var container = $("<figure></figure>").append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
                     
                     var text = $("<figcaption></figcaption>");
@@ -239,8 +203,7 @@
                     container.append(text);
                     
                     container.click(function(){
-                        var testing = JSON.stringify(obj);
-                        localStorage.setItem("item123",testing);
+                        localStorage.setItem("item123",objString);
                         console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
 
                         //to other page
@@ -256,8 +219,8 @@
                     
                     
                 }
-                displayCart = function(){
-                    
+                displayCart(){
+                    var objString = JSON.stringify(this.obj);
                     var container = $("<div class = 'cartItem'></div>");
                     container.append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
                     
@@ -268,8 +231,7 @@
                     container.append(text);
                     
                     container.click(function(){
-                         var testing = JSON.stringify(obj);
-                        localStorage.setItem("item123",testing);
+                        localStorage.setItem("item123",objString);
                         console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
 
                         //to other page
@@ -301,93 +263,6 @@
                 console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
             }
     </script>
-    
-<!--
-	<script type="text/javascript">
-
-			//helper method to store data in localStorage
-				var itemObj = new Object(); 
-				var localStore = function(itemNumber) {
-
-					/*	This will be delete after everything work out!
-								/*var typeData = firebase.database().ref().child("items").child(itemNumber).child("type");
-								var priceData = firebase.database().ref().child("items").child(itemNumber).child("price");
-								var sizeData = firebase.database().ref().child("items").child(itemNumber).child("size");
-								var colorData = firebase.database().ref().child("items").child(itemNumber).child("color");
-								var listerData = firebase.database().ref().child("items").child(itemNumber).child("lister");*/
-								/*var promise = new Promise(function(resolve, reject) {
-								resolve(typeData.on('value', function(snap){
-									itemObj["type"] = snap.val();
-								}));
-								resolve(priceData.on('value', function(snap){
-									itemObj["price"] = snap.val();
-								}));
-								resolve(sizeData.on('value', function(snap){
-									itemObj["size"] = snap.val();
-								}));
-								resolve(colorData.on('value', function(snap){
-									itemObj["color"] = snap.val();
-								}));
-								resolve(listerData.on('value', function(snap){
-									itemObj["lister"] = snap.val();
-								}));
-								});
-					*/
-
-					//retirve data and store in itemObj
-					itemTypeData[itemNumber].on('value', function(snap){
-					itemObj["type"] = snap.val();
-					});
-					itemPriceData[itemNumber].on('value', function(snap){
-					itemObj["price"] = snap.val();
-					});
-					itemSizeData[itemNumber].on('value', function(snap){
-					itemObj["size"] = snap.val();
-					});
-					itemColorData[itemNumber].on('value', function(snap){
-					itemObj["color"] = snap.val();
-					});
-					itemListerData[itemNumber].on('value', function(snap){
-					itemObj["lister"] = snap.val();
-					});
-
-					//store in local storage
-					var testing = JSON.stringify(itemObj);
-					localStorage.setItem("item123",testing);
-					console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
-				
-					//to other page
-					  location.replace("itemPage.html")
-
-
-			}
-			
-			//call listening
-			for(i= 0; i < 8; i++){
-			listening(i);
-			}
-
-			//figure on click
-			figure[0].addEventListener("click", function(){
-			localStore(0)});
-			figure[1].addEventListener("click", function(){
-			localStore(1)});
-			figure[2].addEventListener("click", function(){
-			localStore(2)});
-			figure[3].addEventListener("click", function(){
-			localStore(3)});
-			figure[4].addEventListener("click", function(){
-			localStore(4)});
-			figure[5].addEventListener("click", function(){
-			localStore(5)});
-			figure[6].addEventListener("click", function(){
-			localStore(6)});
-			figure[7].addEventListener("click", function(){
-			localStore(7)});
-
-
-	</script>
--->
 
 </body>
 </html>
