@@ -172,9 +172,8 @@
             let cart = JSON.parse(localStorage.getItem("cart"));
             //console.log(localStorage.getItem("cart"));
             cart.forEach(function(element){
-                let temp = new Item(element);
-                console.log(temp);
-               $("#currentCart").append(temp.displayCart);
+                var temp = new Item(element);
+               $("#currentCart").append(temp.displayCart());
             });
 			$("#cartDiv").css({"display": "inline"});
 		});
@@ -214,16 +213,20 @@
 	</script>
     <!-- script for item population via class-->
     <script>
-        function Item(obj){
-                this.type = obj.type,
-                this.lister = obj.lister,
-                this.tags = obj.tags,
-                this.colors = obj.colors,
-                this.image = obj.image,
-                this.price = obj.price,
-                this.size = obj.size,
+        class Item{
+//                type;lister;tags;colors;image;price;size;
+                constructor(obj) {
+                    this.type = obj.type;
+                    this.lister = obj.lister;
+                    this.tags = obj.tags;
+                    this.colors = obj.colors;
+                    this.image = obj.image;
+                    this.price = obj.price;
+                    this.size = obj.size;
+                }
+               
                     
-                this.displayBrowse = function (){
+                displayBrowse = function (){
                     var container = $("<figure></figure>").append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
                     
                     var text = $("<figcaption></figcaption>");
@@ -238,20 +241,22 @@
                         console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
 
                         //to other page
-                        location.replace("itemPage.html")
+                        location.replace("itemPage.html");
                         
                     });
                     
                     return container;
 
-                },
-                this.displayItempage = function (){
+                }
+                displayItempage = function (){
                     var container = document.createElement("div");
                     
                     
-                },
-                this.displayCart = function(){
-                    var container = $("<div class = 'cartItem'></div>").append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
+                }
+                displayCart = function(){
+                    
+                    var container = $("<div class = 'cartItem'></div>");
+                    container.append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
                     
                     var text = $("<div></div>");
                     text.append($("<p class = 'price'>"+this.price+"</p>"));
@@ -283,6 +288,7 @@
                     console.log("Get items successful!");
                     snap.val().forEach(function(element){
                         let temp = new Item(element);
+                        //console.log(temp);
                         $("#content").append(temp.displayBrowse());
                     })
                 });
