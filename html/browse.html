@@ -3,14 +3,14 @@
 <head>
 
 	<title>ToBeDetermine</title>
-	<link rel= "stylesheet" href="BrowserCss.CSS" />
+	<link rel= "stylesheet" href="../css/BrowserCss.CSS" />
 
 	<!--filter and cart icon-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<!--jquery-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-	<script src="Firebase_calls.js"></script>
+	<script src="../js/Firebase_calls.js"></script>
 
 
 	<style>
@@ -20,17 +20,23 @@
 <body>
   
     <header>
+        
     <div id="container">
-      
-      <nav id= "featureMenu">
-        <li><a href="home.html">HOME</a></li>
-        <li><a href="browse.html">BROWSE</a></li>
-        <li><a href="upcycle.html">UPCYCLE</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-      </nav>
-      <div class="inputcontainer">
-        <input id="searchbar" type = "text" placeholder="Search Clothes" name="Search">
-        <input id="button" type="submit" id="submit" name="SEARCH" value="Submit"/>
+        <div id="topMenuDiv">
+        <img id = "logo" src =logo.svg>
+            <div>
+          <nav id= "featureMenu">
+            <li><a href="home.html">HOME</a></li>
+            <li><a href="browse.html">BROWSE</a></li>
+            <li><a href="upcycle.html">UPCYCLE</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+          </nav>
+
+          <div class="inputcontainer">
+            <input id="searchbar" type = "text" placeholder="Search Clothes" name="Search">
+            <input id="button" type="submit" id="submit" name="SEARCH" value="Submit"/>
+          </div>
+          </div>
       </div>
       <nav id="greynav">
           <ul>

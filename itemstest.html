@@ -16,6 +16,7 @@
           };
           firebase.initializeApp(config);
         </script>
+        <link rel= "stylesheet" href="BrowserCss.CSS" />
         <style>
             .cartItem{
                 width:inherit;
@@ -32,6 +33,10 @@
             .cartItem>*{
                 display:inline-block;
             }
+            
+            #content {
+                display:flex;
+            }
         </style>
     </head>
     
@@ -39,24 +44,29 @@
         <div id="content"></div>
         
         <script>
-            function Item(type,lister,tags,sizes,colors,image,price){
-                this.type = type,
-                this.lister = lister,
-                this.tags = tags,
-                this.colors = colors,
-                this.image = image,
-                this.price = price,
+            function Item(obj){
+                this.type = obj.type,
+                this.lister = obj.lister,
+                this.tags = obj.tags,
+                this.colors = obj.colors,
+                this.image = obj.image,
+                this.price = obj.price,
+                this.sizes = obj.sizes,
+                    
                 this.displayBrowse = function (){
-//                    let container = $("<div id = 'displayBrowse' class = 'browseItem'></div>");
-//                    
-//                    container.append();
-//                    let figure = $("<figure></figure>")
-//                    
-//                    var item = document.createElement("img");
-//                    item[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
-//                    itemDescription[i] = document.createElement("figcaption");
-//                    itemDescription[i].innerText = "Item Description #" + (i+1);
-//                    itemDescription[i].setAttribute("id", "itemDescription" + i);
+                    var container = $("<figure></figure>").append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
+                    
+                    var text = $("<figcaption></figcaption>");
+                    text.append($("<p class = 'type'>"+this.type+"</p>"));
+                    text.append($("<p class ='price'>"+this.price+"</p>"));
+                    
+                    container.append(text);
+                    
+                    container.click(function(){
+                        console.log("hello");
+                    });
+                    
+                    return container;
 
                 },
                 this.displayItempage = function (){
@@ -65,13 +75,17 @@
                     
                 },
                 this.displayCart = function(){
-                    var container = $("<div class = 'cartItem'></div>").append($("<img src = "+image+" alt = 'image of clothing item'>"));
+                    var container = $("<div class = 'cartItem'></div>").append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
                     
                     var text = $("<div></div>");
-                    text.append($("<p class = 'price'>"+price+"</p>"));
-                    text.append($("<p class ='size'>"+sizes+"</p>"));
+                    text.append($("<p class = 'price'>"+this.price+"</p>"));
+                    text.append($("<p class ='size'>"+this.sizes+"</p>"));
                     
                     container.append(text);
+                    
+                    container.click(function(){
+                        console.log("hello");
+                    });
                     
                     return container;
                     
@@ -79,20 +93,27 @@
                 
             }
             
+            
+            
             var dbItemsRef = firebase.database().ref().child("items");
             
             dbItemsRef.on(
                 "value",
                 function(snap) {
                     console.log("Get items successful!");
-                    console.log(snap);
+                    console.log(snap.val());
+                    snap.val().forEach(function(element){
+                        let temp = new Item(element);
+                        console.log(temp);
+                        $("#content").append(temp.displayBrowse());
+                    })
                 });
             
             
             
-            var test1 = new Item("shirt", "wuviv", [], ["s","m"], "black", "https://dummyimage.com/50x50/000/fff", "$15.00");
+            var test1 = new Item({"type":"shirt", "lister":"wuviv", "tags":[], "sizes":["s","m"], "colors":"black", "image":"https://i.ytimg.com/vi/K1rH_BdaLpo/maxresdefault.jpg", "price":"$15.00"});
             console.log(test1);
-            $("#content").append(test1.displayCart());
+            $("#content").append(test1.displayBrowse());
         </script>
     </body>
 </html>
