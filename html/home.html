@@ -16,33 +16,7 @@
 
 	<style>
 		
-
-		#currentCloset{
-        display: flex;
-        flex-flow: column;
-        background-color:pink;
-        height: 50%;
-
-    }
-
-    .cartItem{
-        width:inherit;
-    /*    display:flex;*/
-        font-size: 10pt;
-        justify-content: space-around;
-
-    }
-
-    .cartItem>img{
-        height:50px;
-        width: 50px;
-    }
-    .cartItem>*{
-        display:inline-block;
-        }
-		#cartDiv{
-			display: none;
-		}
+/*
     .welcomebar {
       border: 1px solid black;
       height: 300px;
@@ -62,253 +36,40 @@
       color: burlywood;
       text-shadow: 0 0 5px #000;
     }
+*/
+        .welcomebar {
+            background-image: url("https://images.unsplash.com/photo-1512445181747-57ba1fa4ac83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80");
+            background-repeat: no-repeat;
+            width: 1000px;
+            height: 500px;
+            margin-left: 100px;
+        }
+        img {
+            width:400px;
+            height: 400px;
+        }
+        
+        div{
+            margin-left: 100px;
+            width:inherit;
+        }
 	</style>
 
 </head>
 <body>
-  
-	<header>
-    <div id="container">
-      
-      <nav id= "featureMenu">
-        <li><a href="home.html">HOME</a></li>
-        <li><a href="browse.html">BROWSE</a></li>
-        <li><a href="upcycle.html">UPCYCLE</a></li>
-        <li><a href="about.html">ABOUT</a></li>
-      </nav>
-      <div class="inputcontainer">
-        <input id="searchbar" type = "text" placeholder="Search Clothes" name="Search">
-        <input id="button" type="submit" id="submit" name="SEARCH" value="Submit"/>
-      </div>
-      <nav id="greynav">
-          <ul>
-            <li><a href="#">Mens</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Womens</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Neutral</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a id="lastli"href="#">Kids</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-          </ul>
-      </nav>
-    </div>
-	</header>
-  
-	<aside>
-		    <div>
-            <i id = "filterButton" class="fas fa-filter"></i>
-            <i id = "orderButton" class="fas fa-shopping-basket"></i>
-        </div>
-	    <div id= "filterDiv">
-			<p>FILTERS APPLIED</p>
-			<hr>
-			<p id= filtersApplied></p>
-			<p>FILTERS</p>
-			<hr>
-			<ul>
-				<li id="filter_size">Size </li>
-				<li id="filter_brand">Brand</li>
-				<li id="filter_style">Style</li>
-				<li id="filter_color">Colour</li>
-				<li id= "filter_price">Price Range</li>
-			</ul>
-		</div>
-		<div id= "cartDiv">
-			<p>CURRENT ORDER</p>
-			<hr>
-			<p id= "closet">CLOSET ( to borrow )</p>
-	        <div id="currentCloset">
-	            <div class="cartItem" id="closet0">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00 / 2 weeks</p>
-	                    <p class ="size">S</p>
-	                </div>   
-	            </div>
-	            
-	            <div class="cartItem" id="closet1">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00 / 2 weeks</p>
-	                    <p class ="size">M</p>
-	                </div>   
-	            </div>
-	            
-	             <div class="cartItem" id="closet2">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00</p>
-	                    <p class ="size">L</p>
-	                </div>   
-	            </div>
-	        </div>
-	            
-			<p id = "cart">CART ( to keep )</p>
-	        <div id="currentCart">
-	             <div class="cartItem" id="cart0">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00</p>
-	                    <p class ="size">S</p>
-	                </div>   
-	            </div>
-	            
-	            <div class="cartItem" id="cart1">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00</p>
-	                    <p class ="size">M</p>
-	                </div>   
-	            </div>
-	            
-	             <div class="cartItem" id="cart2">
-	                <img src="https://dummyimage.com/50x50/000/fff" alt = "clothing image">
-	                <div>
-	                    <p class ="price">$15.00</p>
-	                    <p class ="size">L</p>
-	                </div>   
-	            </div>
-	        </div>
-			<button id= "checkoutForCart">Checkout</button>
-		</div>
-	</aside>
-	<!--script for cart and closet-->
-	<script type="text/javascript">
-		//mouse action when click
-		$("#orderButton").click(function(event){
-			$("#filterDiv").css({"display": "none"});
-			$("#cartDiv").css({"display": "inline"});
-		});
-		
-		$("#filterButton").click(function(event){
-			$("#filterDiv").css({"display": "inline"});
-			$("#cartDiv").css({"display": "none"});
-		});
 
-		$("#checkoutForCart").click(function(event){
-			var closetItems = [];
-			var cartItems = [];
-			var currentItem;
-			for(i = 0; i < 3; i ++){
-				currentItem = document.getElementById("closet"+ i);
-				closetItems[i].color;
-				closetItems[i].price;
-				closetItems[i].size;
-				closetItems[i].type;
-
-			}
-
-		});
-		//icon mouse action display effect
-		$("#orderButton").mousedown(function(){
-			$("#orderButton").css({"color": "grey"});
-		});
-		$("#orderButton").mouseup(function(){
-			$("#orderButton").css({"color": "black"});
-		});
-		$("#filterButton").mousedown(function(){
-			$("#filterButton").css({"color": "grey"});
-		});
-		$("#filterButton").mouseup(function(){
-			$("#filterButton").css({"color": "black"});
-		});
-	</script>
   
   <div class="welcomebar">
-    <h1>Welcome to Our Online Thrift Store!</h1>
+<!--    <img src = logo.svg>-->
   </div>
+    <div>
+        <h1>ECO EXCHANGE</h1>
+    </div>
+    <div>
+        <b>LOGIN  <a href="browse.html">BROWSE</a></b>
+    </div>
   
-	<script type="text/javascript">
-			//listing items using javascript
-			var content = document.createElement("div");
-			var itemListingRow = [];
-			itemListingRow[0] = document.createElement("div");
-			itemListingRow[1] = document.createElement("div");
-			var itemListingCol = [];
-			var figure = [];
-			var item = [];
-			var itemDescription = [];
-			for (i= 0; i < 8 ; i++) {
-				itemListingCol[i] = document.createElement("div");	
-				itemListingCol[i].setAttribute("class", "itemListingCol");
-				figure[i] = document.createElement("figure");
-				item[i] = document.createElement("img");
-				item[i].setAttribute("src", "https://dummyimage.com/140x180/000/fff");
-				itemDescription[i] = document.createElement("figcaption");
-				itemDescription[i].innerText = "Item Description #" + (i+1);
-				itemDescription[i].setAttribute("id", "itemDescription" + i);
-			}
-			document.body.appendChild(content);
-				content.appendChild(itemListingRow[0]);
-				content.appendChild(itemListingRow[1]);
-					for(i=0; i < 4; i ++){
-						itemListingRow[0].appendChild(itemListingCol[i]);
-							itemListingCol[i].appendChild(figure[i]);
-								figure[i].appendChild(item[i]);
-								figure[i].appendChild(itemDescription[i]);
-					}
-					for(i=4; i < 8; i ++){
-						itemListingRow[0].appendChild(itemListingCol[i]);
-							itemListingCol[i].appendChild(figure[i]);
-								figure[i].appendChild(item[i]);
-								figure[i].appendChild(itemDescription[i]);
-					}
-			/*items' type accessing from firebase
-			 *currently only have 2 data
-			 */
-			var itemTypeData = [];
-			for (i = 0; i< 8 ; i++){
-			itemTypeData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("type");
-			}
-			/*items' price accessing from firebase
-			 *currently only have 2 data
-			 */
-			var itemPriceData = [];
-			for (i = 0; i< 8 ; i++){
-			itemPriceData[i] = firebase.database().ref().child("items").child("item" + (i + 1)).child("price");
-			}
-			//helper method to listen from database
-			var listening = function(number){
-				itemTypeData[number].on(
-					'value', 
-					function(snap){
-						itemDescription[number].innerText = snap.val();
-					});
-				itemPriceData[number].on(
-					'value', 
-					function(snap){
-						itemDescription[number].innerText += "_Price:" +snap.val();
-					});
-			}
-			for(i= 0; i < 8; i++){
-			listening(i);
-			}
-	</script>
+	
 
 </body>
 </html>
