@@ -1,0 +1,62 @@
+#itemFigure {
+	
+}
+aside{
+	float: left;
+	height: 100%;
+	width: 40%;
+}
+
+#detailsWithReviews{
+	float: right;
+	width: 50%;
+	margin-right: 50px;
+}
+#detailsWithCalendar{
+	float: right;
+	width: 50%;
+	margin-right: 50px;
+}
+fieldset{
+	width: 50%;
+}
+#itemSizeSelect{
+	width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  appearance: menulist-button;
+  height: 50px;
+  font-size: 16px;
+
+}
+#labelColor{
+	width: 80%;
+	float: left;
+}
+
+#reviews{
+	float: right;
+}
+.reviewerImg{
+	width: 50px;
+	height: 100%;
+	float: left;
+	display: inline-block;
+	clear: right;
+	margin-top: 20px;
+}
+.nameAndReview{
+	width: 80%;
+	float: right;
+}
+
+#itemColor{
+	width: 80%;
+	text-align: center;
+}
+
+#itemImage{
+    width: 200px;
+    height: 300px;
+}
+
