@@ -20,7 +20,6 @@ aside{
 fieldset{
 	width: 50%;
 }
-<<<<<<< HEAD
 #sizeSelect{
 	width: 100%;
   padding: 12px 20px;
@@ -33,7 +32,7 @@ fieldset{
 	width: 92.5%;
   padding: 12px 20px;
   margin: 8px 0;
-=======
+}
 #itemSize{
 	width: 80%;
 	float: right;
