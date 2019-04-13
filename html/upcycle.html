@@ -6,7 +6,7 @@
     <link rel= "stylesheet" href="../css/itemPageCss.css">
     <link rel= "stylesheet" href="../css/upcycle.css">
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-    <script src= "/js/Firebase_calls.js"></script>
+    <script src= "../js/Firebase_calls.js"></script>
 
 </head>
     
@@ -112,6 +112,8 @@
     
     <script>
       function upload(){
+        var promise = new Promise(function(resolve, reject){
+  function upload1(){
         var lister = document.getElementById("lister").value;
         var price = document.getElementById("price").value;
         var type = document.getElementById("type").value;
@@ -178,8 +180,16 @@
           console.log(type);
           console.log(size);
           console.log(color);
-        }
+    }
+          resolve(upload1);
+          reject("WRONG");
 
+        }
+      });
+      promise.then(function(){
+        location.replace("browse.html");
+      });
+        
       }
     </script>
 
