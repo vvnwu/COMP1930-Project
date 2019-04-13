@@ -3,12 +3,12 @@
 <head>
 
 	<title>ToBeDetermine</title>
-	<link rel= "stylesheet" href="../css/BrowserCss.CSS" />
+	<link rel= "stylesheet" href="../css/browserCss.css" />
 
 	<!--filter and cart icon-->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 	<!--jquery-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
 	<script src="../js/Firebase_calls.js"></script>
 
@@ -150,7 +150,6 @@
 		$("#filterButton").click(function(event){
 			$("#filterDiv").css({"display": "inline"});
 			$("#cartDiv").css({"display": "none"});
-			localStorage.setItem("numberOfItem", 8);
 		});
 
 		$("#checkoutForCart").click(function(event){
@@ -180,6 +179,7 @@
 		$("#filterButton").mouseup(function(){
 			$("#filterButton").css({"color": "black"});
 		});
+
 	</script>
 
 
@@ -262,6 +262,8 @@
                         //console.log(temp);
                         $("#content").append(temp.displayBrowse());
                     })
+
+                    localStorage.setItem("numberOfItem", snap.val().length);
                 });
         
             if(localStorage.getItem("cart")==null){

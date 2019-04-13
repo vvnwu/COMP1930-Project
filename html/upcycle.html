@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Upcycle Page</title>
-    <link rel= "stylesheet" href="../css/BrowserCss.css">
+    <link rel= "stylesheet" href="../css/browserCss.css">
     <link rel= "stylesheet" href="../css/itemPageCss.css">
     <link rel= "stylesheet" href="../css/upcycle.css">
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
@@ -113,7 +113,7 @@
     <script>
       function upload(){
         var promise = new Promise(function(resolve, reject){
-  function upload1(){
+
         var lister = document.getElementById("lister").value;
         var price = document.getElementById("price").value;
         var type = document.getElementById("type").value;
@@ -160,7 +160,7 @@
 
         } else {
           var numberOfItem = parseInt(localStorage.getItem("numberOfItem"));
-
+          console.log(numberOfItem);
           price = "$" + price;
 
           var dbItemsRef = firebase.database().ref("items/" + numberOfItem).set({
@@ -172,22 +172,18 @@
             tag: tag,
             type: type
           });
-          numberOfItem++;
-          localStorage.setItem("numberOfItem", numberOfItem);
           ;
-          console.log(lister);
-          console.log(price);
-          console.log(type);
-          console.log(size);
-          console.log(color);
-    }
-          resolve(upload1);
+
+          resolve();
           reject("WRONG");
 
         }
       });
-      promise.then(function(){
-        location.replace("browse.html");
+      promise.then(function(value){
+        setTimeout(function() {
+            location.replace("browse.html");
+
+  }, 300);
       });
         
       }
