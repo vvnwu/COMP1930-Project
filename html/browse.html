@@ -1,274 +1,304 @@
+<!-- Primary Item Browsing Page -->
 <!DOCTYPE html>
 <html>
 <head>
 
-	<title>ToBeDetermine</title>
-	<link rel= "stylesheet" href="../css/BrowserCss.css" />
+    <title>ECO EXCHANGE</title>
+    <!-- Navigation Bar and Browser Items styling -->
+    <link rel="stylesheet" href="../css/BrowserCss.css" />
 
-	<!--filter and cart icon-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-	<!--jquery-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-	<script src="../js/Firebase_calls.js"></script>
-
-
-	<style>
-	</style>
+    <!--filter and cart icon-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!--jquery-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Firebase initalization -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="../js/Firebase_calls.js"></script>
 
 </head>
+
 <body>
-  
+
+    <!-- Navigation Bar -->
     <header>
-        
-    <div id="container">
-        <div id="topMenuDiv">
-        <img id = "logo" src =logo.svg>
-            <div>
-          <nav id= "featureMenu">
-            <li><a href="home.html">HOME</a></li>
-            <li><a href="browse.html">BROWSE</a></li>
-            <li><a href="upcycle.html">UPCYCLE</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-          </nav>
 
-          <div class="inputcontainer">
-            <input id="searchbar" type = "text" placeholder="Search Clothes" name="Search">
-            <input id="button" type="submit" id="submit" name="SEARCH" value="Submit"/>
-          </div>
-          </div>
-      </div>
-      <nav id="greynav">
-          <ul>
-            <li><a href="#">Mens</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Womens</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Unisex</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Kids</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-          </ul>
-      </nav>
-    </div>
-	</header>
-  
-	<aside>
-        <div>
-            <i id = "filterButton" class="fas fa-filter"></i>
-            <i id = "orderButton" class="fas fa-shopping-basket"></i>
+        <div id="container">
+            <div id="topMenuDiv">
+                <img id="logo" src=logo.svg>
+                <div>
+                    <nav id="featureMenu">
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="browse.html">BROWSE</a></li>
+                        <li><a href="upcycle.html">UPCYCLE</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                    </nav>
+
+                    <div class="inputcontainer">
+                        <input id="searchbar" type="text" placeholder="Search Clothes" name="Search">
+                        <input id="button" type="submit" id="submit" name="SEARCH" value="Submit" />
+                    </div>
+                </div>
+            </div>
+            <nav id="greynav">
+                <ul>
+                    <li><a href="#">Mens</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Womens</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Unisex</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kids</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
-	    <div id= "filterDiv">
-			<p>FILTERS APPLIED</p>
-			<hr>
-			<p id= filtersApplied></p>
-			<p>FILTERS</p>
-			<hr>
-			<ul>
-				<li id="filter_size">Size </li>
-				<li id="filter_brand">Brand</li>
-				<li id="filter_style">Style</li>
-				<li id="filter_color">Colour</li>
-				<li id= "filter_price">Price Range</li>
-			</ul>
-		</div>
-		<div id= "cartDiv">
-			<p>CURRENT ORDER</p>
-			<hr>
-			<p id= "closet">CLOSET ( to borrow )</p>
-	        <div id="currentCloset">
-	            <div class="cartItem" id="closet0">
-	                <img src="https://static1.squarespace.com/static/54444f22e4b056200972f47a/t/5c1cf7d288251b338febe185/1545403789479/t_shirt_customizer.png" alt = "shirt logo">
-	                <div>
-	                    <p class ="price">$15.00 / 2 weeks</p>
-	                    <p class ="size">S</p>
-	                </div>   
-	            </div>
-	            
-	            <div class="cartItem" id="closet1">
-	                <img src="https://static1.squarespace.com/static/54444f22e4b056200972f47a/t/5c1cf7d288251b338febe185/1545403789479/t_shirt_customizer.png" alt = "shirt logo">
-	                <div>
-	                    <p class ="price">$15.00 / 2 weeks</p>
-	                    <p class ="size">M</p>
-	                </div>   
-	            </div>
-	            
-	             <div class="cartItem" id="closet2">
-	                <img src="https://static1.squarespace.com/static/54444f22e4b056200972f47a/t/5c1cf7d288251b338febe185/1545403789479/t_shirt_customizer.png" alt = "shirt logo">
-	                <div>
-	                    <p class ="price">$15.00</p>
-	                    <p class ="size">L</p>
-	                </div>   
-	            </div>
-	        </div>
-	            
-			<p id = "cart">CART ( to keep )</p>
-	        <div id="currentCart"></div>
-			<button id= "checkoutForCart">Checkout</button>
-		</div>
-	</aside>
-    <div id="content"></div>
+    </header>
+
+    <!-- Side menu for displaying filters and cart -->
+    <aside>
+        <!-- For switching to filter and cart -->
+        <div>
+            <i id="filterButton" class="fas fa-filter"></i>
+            <i id="orderButton" class="fas fa-shopping-basket"></i>
+        </div>
+        <!--Filtering Menu -->
+        <div id="filterDiv">
+            <p>FILTERS APPLIED</p>
+            <hr>
+            <p id=filtersApplied></p>
+            <p>FILTERS</p>
+            <hr>
+            <ul>
+                <li id="filter_size">Size </li>
+                <li id="filter_brand">Brand</li>
+                <li id="filter_style">Style</li>
+                <li id="filter_color">Colour</li>
+                <li id="filter_price">Price Range</li>
+            </ul>
+        </div>
+        
+        <!-- Cart Menu -->
+        <div id="cartDiv">
+            <p>CURRENT ORDER</p>
+            <hr>
+            <!-- Rental Items, to be implemented, currently dummy -->
+            <p id="closet">CLOSET ( to borrow )</p>
+            <div id="currentCloset">
+                <div class="cartItem" id="closet0">
+                    <img src="https://static1.squarespace.com/static/54444f22e4b056200972f47a/t/5c1cf7d288251b338febe185/1545403789479/t_shirt_customizer.png" alt="shirt logo">
+                    <div>
+                        <p class="price">$15.00 / 2 weeks</p>
+                        <p class="size">S</p>
+                    </div>
+                </div>
+
+                <div class="cartItem" id="closet1">
+                    <img src="https://static1.squarespace.com/static/54444f22e4b056200972f47a/t/5c1cf7d288251b338febe185/1545403789479/t_shirt_customizer.png" alt="shirt logo">
+                    <div>
+                        <p class="price">$15.00 / 2 weeks</p>
+                        <p class="size">M</p>
+                    </div>
+                </div>
+
+                <div class="cartItem" id="closet2">
+                    <img src="https://static1.squarespace.com/static/54444f22e4b056200972f47a/t/5c1cf7d288251b338febe185/1545403789479/t_shirt_customizer.png" alt="shirt logo">
+                    <div>
+                        <p class="price">$15.00</p>
+                        <p class="size">L</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Buying Items, loaded from local storage -->
+            <p id="cart">CART ( to keep )</p>
+            <div id="currentCart"></div>
+            <button id="checkoutForCart">Checkout</button>
+        </div>
+    </aside>
     
-	<!--script for cart and closet-->
-	<script type="text/javascript">
-		//mouse action when click
-		$("#orderButton").click(function(event){
-			$("#filterDiv").css({"display": "none"});
-            let cart = JSON.parse(localStorage.getItem("cart"));
-            //console.log(localStorage.getItem("cart"));
-            cart.forEach(function(element){
-                var temp = new Item(element);
-               $("#currentCart").append(temp.displayCart());
+    <!-- To append items for browsing from Firebase -->
+    <div id="content"></div>
+
+    <!--script for cart and closet-->
+    <script type="text/javascript">
+        //switch from filter menu to cart menu
+        $("#orderButton").click(function(event) {
+            $("#filterDiv").css({
+                "display": "none"
             });
-			$("#cartDiv").css({"display": "inline"});
-		});
-		
-		$("#filterButton").click(function(event){
-			$("#filterDiv").css({"display": "inline"});
-			$("#cartDiv").css({"display": "none"});
-			localStorage.setItem("numberOfItem", 8);
-		});
+            
+            //loads cart items from local storage
+            let cart = JSON.parse(localStorage.getItem("cart"));
+            cart.forEach(function(element) {
+                var temp = new Item(element);
+                $("#currentCart").append(temp.displayCart());
+            });
+            $("#cartDiv").css({
+                "display": "inline"
+            });
+        });
+        //switch from cart menu to filter menu
+        $("#filterButton").click(function(event) {
+            $("#filterDiv").css({
+                "display": "inline"
+            });
+            $("#cartDiv").css({
+                "display": "none"
+            });
+            
+        });
 
-		$("#checkoutForCart").click(function(event){
-			var closetItems = [];
-			var cartItems = [];
-			var currentItem;
-			for(i = 0; i < 3; i ++){
-				currentItem = document.getElementById("closet"+ i);
-				closetItems[i].color;
-				closetItems[i].price;
-				closetItems[i].size;
-				closetItems[i].type;
+        //To checkout items, Not implemented yet
+        $("#checkoutForCart").click(function(event) {
+            var closetItems = [];
+            var cartItems = [];
+            var currentItem;
+            for (i = 0; i < 3; i++) {
+                currentItem = document.getElementById("closet" + i);
+                closetItems[i].color;
+                closetItems[i].price;
+                closetItems[i].size;
+                closetItems[i].type;
 
-			}
+            }
 
-		});
-		//icon mouse action display effect
-		$("#orderButton").mousedown(function(){
-			$("#orderButton").css({"color": "grey"});
-		});
-		$("#orderButton").mouseup(function(){
-			$("#orderButton").css({"color": "black"});
-		});
-		$("#filterButton").mousedown(function(){
-			$("#filterButton").css({"color": "grey"});
-		});
-		$("#filterButton").mouseup(function(){
-			$("#filterButton").css({"color": "black"});
-		});
-	</script>
+        });
+        
+        //icon mouse action display effect
+        $("#orderButton").mousedown(function() {
+            $("#orderButton").css({
+                "color": "grey"
+            });
+        });
+        $("#orderButton").mouseup(function() {
+            $("#orderButton").css({
+                "color": "black"
+            });
+        });
+        $("#filterButton").mousedown(function() {
+            $("#filterButton").css({
+                "color": "grey"
+            });
+        });
+        $("#filterButton").mouseup(function() {
+            $("#filterButton").css({
+                "color": "black"
+            });
+        });
+    </script>
 
 
     <!-- script for item population via class-->
     <script>
-        class Item{
-                constructor(obj) {
-                    this.obj = obj;
-                    this.type = obj.type;
-                    this.lister = obj.lister;
-                    this.tags = obj.tags;
-                    this.colors = obj.colors;
-                    this.image = obj.image;
-                    this.price = obj.price;
-                    this.size = obj.size;
-                }
-               
-                    
-                displayBrowse(){
-                    var objString = JSON.stringify(this.obj);
-                    var container = $("<figure></figure>").append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
-                    
-                    var text = $("<figcaption></figcaption>");
-                    text.append($("<p class = 'type'>"+this.type+"</p>"));
-                    text.append($("<p class ='price'>"+this.price+"</p>"));
-                    
-                    container.append(text);
-                    
-                    container.click(function(){
-                        localStorage.setItem("item123",objString);
-                        console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
-
-                        //to other page
-                        location.replace("itemPage.html");
-                        
-                    });
-                    
-                    return container;
-
-                }
-                displayItempage = function (){
-                    var container = document.createElement("div");
-                    
-                    
-                }
-                displayCart(){
-                    var objString = JSON.stringify(this.obj);
-                    var container = $("<div class = 'cartItem'></div>");
-                    container.append($("<img src = "+this.image+" alt = 'image of clothing item'>"));
-                    
-                    var text = $("<div></div>");
-                    text.append($("<p class = 'price'>"+this.price+"</p>"));
-                    text.append($("<p class ='size'>"+this.size+"</p>"));
-                    
-                    container.append(text);
-                    
-                    container.click(function(){
-                        localStorage.setItem("item123",objString);
-                        console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
-
-                        //to other page
-                        location.replace("itemPage.html");
-                    });
-                    
-                    return container;
-                    
-                }
-                
+        //Item class for loading in data and populating divs to display
+        class Item {
+            //item constructor
+            constructor(obj) {
+                this.obj = obj;
+                this.type = obj.type;
+                this.lister = obj.lister;
+                this.tags = obj.tags;
+                this.colors = obj.colors;
+                this.image = obj.image;
+                this.price = obj.price;
+                this.size = obj.size;
             }
-            
-            
-            var dbItemsRef = firebase.database().ref().child("items");
-            
-            dbItemsRef.on(
-                "value",
-                function(snap) {
-                    console.log("Get items successful!");
-                    snap.val().forEach(function(element){
-                        let temp = new Item(element);
-                        //console.log(temp);
-                        $("#content").append(temp.displayBrowse());
-                    })
+
+            //create div for item to be displayed on browse page
+            displayBrowse() {
+                var objString = JSON.stringify(this.obj);
+                var container = $("<figure></figure>").append($("<img src = " + this.image + " alt = 'image of clothing item'>"));
+
+                var text = $("<figcaption></figcaption>");
+                text.append($("<p class = 'type'>" + this.type + "</p>"));
+                text.append($("<p class ='price'>" + this.price + "</p>"));
+
+                container.append(text);
+
+                container.click(function() {
+                    localStorage.setItem("item123", objString);
+                    console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
+
+                    //to other page
+                    location.replace("itemPage.html");
+
                 });
-        
-            if(localStorage.getItem("cart")==null){
-                localStorage.setItem("cart","[]");
-                console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
+
+                return container;
+
             }
+          
+            //create div for item to be displayed in cart
+            displayCart() {
+                var objString = JSON.stringify(this.obj);
+                var container = $("<div class = 'cartItem'></div>");
+                container.append($("<img src = " + this.image + " alt = 'image of clothing item'>"));
+
+                var text = $("<div></div>");
+                text.append($("<p class = 'price'>" + this.price + "</p>"));
+                text.append($("<p class ='size'>" + this.size + "</p>"));
+
+                container.append(text);
+
+                container.click(function() {
+                    localStorage.setItem("item123", objString);
+                    console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
+
+                    //to other page
+                    location.replace("itemPage.html");
+                });
+
+                return container;
+
+            }
+
+        }
+
+        //Get reference to database
+        var dbItemsRef = firebase.database().ref().child("items");
+
+        //Read in items from database and populate browse section
+        dbItemsRef.on(
+            "value",
+            function(snap) {
+                console.log("Get items successful!");
+                snap.val().forEach(function(element) {
+                    let temp = new Item(element);
+                    //console.log(temp);
+                    $("#content").append(temp.displayBrowse());
+                })
+                localStorage.setItem("numberOfItem", snap.val().length);
+                console.log("LOCAL STORAGE: " + localStorage.getItem("numberOfItem"));
+            });
+        
+        //Create a cart if one doesn't exist
+        if (localStorage.getItem("cart") == null) {
+            localStorage.setItem("cart", "[]");
+            console.log("LOCAL STORAGE: " + localStorage.getItem("item123"));
+        }
     </script>
 
-</body>
-</html>
+</body></html>

@@ -1,197 +1,199 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Upcycle Page</title>
-    <link rel= "stylesheet" href="../css/BrowserCss.css">
-    <link rel= "stylesheet" href="../css/itemPageCss.css">
-    <link rel= "stylesheet" href="../css/upcycle.css">
+    <title>Upcycle Page</title>
+    <link rel="stylesheet" href="../css/BrowserCss.css">
+    <link rel="stylesheet" href="../css/itemPageCss.css">
+    <link rel="stylesheet" href="../css/upcycle.css">
     <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase.js"></script>
-    <script src= "../js/Firebase_calls.js"></script>
+    <script src="../js/Firebase_calls.js"></script>
 
 </head>
-    
-<body>
-<header>
-    <div id="container">
-      
-       <div id="topMenuDiv">
-        <img id = "logo" src =logo.svg>
-            <div>
-          <nav id= "featureMenu">
-            <li><a href="home.html">HOME</a></li>
-            <li><a href="browse.html">BROWSE</a></li>
-            <li><a href="upcycle.html">UPCYCLE</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-          </nav>
 
-          <div class="inputcontainer">
-            <input id="searchbar" type = "text" placeholder="Search Clothes" name="Search">
-            <input id="button" type="submit" id="submit" name="SEARCH" value="Submit"/>
-          </div>
-          </div>
-      </div>
-      <nav id="greynav">
-          <ul>
-            <li><a href="#">Mens</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Womens</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Neutral</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Kids</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-          </ul>
-      </nav>
-    </div>
-	</header>
-    
+<body>
+    <header>
+        <div id="container">
+
+            <div id="topMenuDiv">
+                <img id="logo" src=logo.svg>
+                <div>
+                    <nav id="featureMenu">
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="browse.html">BROWSE</a></li>
+                        <li><a href="upcycle.html">UPCYCLE</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                    </nav>
+
+                    <div class="inputcontainer">
+                        <input id="searchbar" type="text" placeholder="Search Clothes" name="Search">
+                        <input id="button" type="submit" id="submit" name="SEARCH" value="Submit" />
+                    </div>
+                </div>
+            </div>
+            <nav id="greynav">
+                <ul>
+                    <li><a href="#">Mens</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Womens</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Neutral</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kids</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <div id="itemSell">
         <aside>
-        <figure id="itemFigure">
-            <img src= "https://dummyimage.com/300x400/000/fff" alt="dummyImage">
-            <figcaption><input type="button" name="submit" id="submit" value="Upload Image"/></figcaption>
-        </figure>
+            <figure id="itemFigure">
+                <img src="https://dummyimage.com/300x400/000/fff" alt="dummyImage">
+                <figcaption><input type="button" name="submit" id="submit" value="Upload Image" /></figcaption>
+            </figure>
         </aside>
-        <div id= "detailsWithReviews">
-          
+        <div id="detailsWithReviews">
+
             <div id="form">
-                <h1 id="itemName">Upcycle Item</h1><hr>
-                  <label for="fname">Your Name:</label>
-                  <input type="text" class="upcycle" id="lister">
-                  <label for="lname">Price:</label>
-                  <input type="text" class="upcycle" id="price" >
-                  <label for="lname">Type:</label>
-                  <input type="text" class="upcycle" id="type">
-                  <label for="lname">Category:</label>
-                  <input type="text" class="upcycle" id="tag">
-                  <label id= "labelSize">Size:</label><br/>
-                  <div id="sizeCheckContainer">
-                    <input type="checkbox" id = "xs" value="XS">X-Small<br>
-                    <input type="checkbox" id = "s" value="S">Small<br>
-                    <input type="checkbox" id = "m" value="M" checked="true">Medium<br>
-                    <input type="checkbox" id = "l" value="L">Large<br>
-                    <input type="checkbox" id = "xl" value="XL">X-Large<br>
-                  </div>
-                  
-                  <br><br>
-                  <label type="text">Color:</label><br>
-                  <input type="color" id="color" value="#ff00ff"/>
-          </div>
+                <h1 id="itemName">Upcycle Item</h1>
+                <hr>
+                <label for="fname">Your Name:</label>
+                <input type="text" class="upcycle" id="lister">
+                <label for="lname">Price:</label>
+                <input type="text" class="upcycle" id="price">
+                <label for="lname">Type:</label>
+                <input type="text" class="upcycle" id="type">
+                <label for="lname">Category:</label>
+                <input type="text" class="upcycle" id="tag">
+                <label id="labelSize">Size:</label><br />
+                <div id="sizeCheckContainer">
+                    <input type="checkbox" id="xs" value="XS">X-Small<br>
+                    <input type="checkbox" id="s" value="S">Small<br>
+                    <input type="checkbox" id="m" value="M" checked="true">Medium<br>
+                    <input type="checkbox" id="l" value="L">Large<br>
+                    <input type="checkbox" id="xl" value="XL">X-Large<br>
+                </div>
+
+                <br><br>
+                <label type="text">Color:</label><br>
+                <input type="color" id="color" value="#ff00ff" />
+            </div>
             <div>
                 <br><br>
                 <button id="subm" onclick="upload()">submit</button>
             </div>
-          
-        </div> 
+
+        </div>
 
     </div>
-    
+
     <script>
-      function upload(){
-        var promise = new Promise(function(resolve, reject){
-  function upload1(){
-        var lister = document.getElementById("lister").value;
-        var price = document.getElementById("price").value;
-        var type = document.getElementById("type").value;
-        var tag = document.getElementById("tag").value;
+        function upload() {
+            var promise = new Promise(function(resolve, reject) {
+                function upload1() {
+                    var lister = document.getElementById("lister").value;
+                    var price = document.getElementById("price").value;
+                    var type = document.getElementById("type").value;
+                    var tag = document.getElementById("tag").value;
 
-        var size = [];
-        var count = 0;
-        var color = document.getElementById("color").value;
-        var checkSize = false;
-        if(document.getElementById("xs").checked){
-          size[count] = document.getElementById("xs").value;
-          count++;
-          checkSize = true;
+                    var size = [];
+                    var count = 0;
+                    var color = document.getElementById("color").value;
+                    var checkSize = false;
+                    if (document.getElementById("xs").checked) {
+                        size[count] = document.getElementById("xs").value;
+                        count++;
+                        checkSize = true;
+                    }
+                    if (document.getElementById("s").checked) {
+                        size[count] = document.getElementById("s").value;
+                        count++;
+                        checkSize = true;
+
+                    }
+                    if (document.getElementById("m").checked) {
+                        size[count] = document.getElementById("m").value;
+                        count++;
+                        checkSize = true;
+                    }
+                    if (document.getElementById("l").checked) {
+                        size[count] = document.getElementById("l").value;
+                        count++;
+                        checkSize = true;
+                    }
+                    if (document.getElementById("xl").checked) {
+                        size[count] = document.getElementById("xl").value;
+                        count++;
+                        checkSize = true;
+                    }
+
+
+
+
+                    if (lister == "" || price == "" || type == "" || tag == "" || !checkSize) {
+                        alert("please input your value");
+                    } else if (isNaN(parseFloat(price))) {
+                        alert("please input integer in price");
+
+                    } else {
+                        var numberOfItem = parseInt(localStorage.getItem("numberOfItem"));
+
+                        price = "$" + price;
+
+                        var dbItemsRef = firebase.database().ref("items/" + numberOfItem).set({
+                            color: color,
+                            image: "https://data.whicdn.com/images/228956393/large.png",
+                            lister: lister,
+                            price: price,
+                            size: size,
+                            tag: tag,
+                            type: type
+                        });
+                        numberOfItem++;
+                        localStorage.setItem("numberOfItem", numberOfItem);;
+                        console.log(lister);
+                        console.log(price);
+                        console.log(type);
+                        console.log(size);
+                        console.log(color);
+
+                    }
+
+                    //          reject("Error Occured.");
+
+                }
+                upload1();
+                resolve();
+            });
+            promise.then(function() {
+                location.replace("browse.html");
+            });
+
         }
-        if(document.getElementById("s").checked){
-          size[count] = document.getElementById("s").value;
-          count++;
-          checkSize = true;
-
-        }
-        if(document.getElementById("m").checked){
-          size[count] = document.getElementById("m").value;
-          count++;
-          checkSize = true;
-        }
-        if(document.getElementById("l").checked){
-          size[count] = document.getElementById("l").value;
-          count++;
-          checkSize = true;
-        }
-        if(document.getElementById("xl").checked){
-          size[count] = document.getElementById("xl").value;
-          count++;
-          checkSize = true;
-        }
-
-
-
-
-        if(lister=="" || price =="" || type =="" || tag=="" ||!checkSize){
-          alert("please input your value");
-        } else if (isNaN(parseFloat(price))){
-          alert("please input integer in price");
-
-        } else {
-          var numberOfItem = parseInt(localStorage.getItem("numberOfItem"));
-
-          price = "$" + price;
-
-          var dbItemsRef = firebase.database().ref("items/" + numberOfItem).set({
-            color: color,
-            image: "https://data.whicdn.com/images/228956393/large.png",
-            lister: lister,
-            price: price,
-            size: size,
-            tag: tag,
-            type: type
-          });
-          numberOfItem++;
-          localStorage.setItem("numberOfItem", numberOfItem);
-          ;
-          console.log(lister);
-          console.log(price);
-          console.log(type);
-          console.log(size);
-          console.log(color);
-    }
-          resolve(upload1);
-          reject("WRONG");
-
-        }
-      });
-      promise.then(function(){
-        location.replace("browse.html");
-      });
-        
-      }
     </script>
 
-</body>
-</html>
+</body></html>

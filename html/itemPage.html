@@ -1,136 +1,144 @@
+<!-- Displays Item Details ( to buy )-->
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Item page</title>
-    <link rel= "stylesheet" href="../css/BrowserCss.css">
-    <link rel= "stylesheet" href="../css/itemPageCss.css">
+    
+    <title>Item page</title>
+    <!-- Navigation Bar -->
+    <link rel="stylesheet" href="../css/BrowserCss.css">
+    <!-- Item Details styling -->
+    <link rel="stylesheet" href="../css/itemPageCss.css">
+    <!-- JQuery -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 
 </head>
-    
-<body>
-    <header>
-    <div id="container">
-      
-       <div id="topMenuDiv">
-        <img id = "logo" src =logo.svg>
-            <div>
-          <nav id= "featureMenu">
-            <li><a href="home.html">HOME</a></li>
-            <li><a href="browse.html">BROWSE</a></li>
-            <li><a href="upcycle.html">UPCYCLE</a></li>
-            <li><a href="about.html">ABOUT</a></li>
-          </nav>
 
-          <div class="inputcontainer">
-            <input id="searchbar" type = "text" placeholder="Search Clothes" name="Search">
-            <input id="button" type="submit" id="submit" name="SEARCH" value="Submit"/>
-          </div>
-          </div>
-      </div>
-      <nav id="greynav">
-          <ul>
-            <li><a href="#">Mens</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Womens</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Neutral</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Kids</a>
-              <ul>
-                <li><a href="#">Outerwear</a></li>
-                <li><a href="#">Tops</a></li>
-                <li><a href="#">Bottoms</a></li>
-                <li><a href="#">Shoes</a></li>
-              </ul>
-            </li>
-          </ul>
-      </nav>
-    </div>
-	</header>
-    
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div id="container">
+
+            <div id="topMenuDiv">
+                <img id="logo" src=logo.svg>
+                <div>
+                    <nav id="featureMenu">
+                        <li><a href="home.html">HOME</a></li>
+                        <li><a href="browse.html">BROWSE</a></li>
+                        <li><a href="upcycle.html">UPCYCLE</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                    </nav>
+
+                    <div class="inputcontainer">
+                        <input id="searchbar" type="text" placeholder="Search Clothes" name="Search">
+                        <input id="button" type="submit" id="submit" name="SEARCH" value="Submit" />
+                    </div>
+                </div>
+            </div>
+            <nav id="greynav">
+                <ul>
+                    <li><a href="#">Mens</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Womens</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Neutral</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Kids</a>
+                        <ul>
+                            <li><a href="#">Outerwear</a></li>
+                            <li><a href="#">Tops</a></li>
+                            <li><a href="#">Bottoms</a></li>
+                            <li><a href="#">Shoes</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Item Details-->
     <div id="itemSell">
+        <!-- Item image -->
         <aside>
-        <figure id="itemFigure">
-            <img id="itemImage" src= "https://dummyimage.com/300x400/000/fff" alt="dummyImage">
-            <figcaption><b>Price: </b> <span id= "itemPrice">$##.##</span></figcaption>
-        </figure>
+            <figure id="itemFigure">
+                <img id="itemImage" src="https://dummyimage.com/300x400/000/fff" alt="dummyImage">
+                <figcaption><b>Price: </b> <span id="itemPrice">$##.##</span></figcaption>
+            </figure>
         </aside>
-        <div id= "detailsWithReviews">
+        
+        <div id="detailsWithReviews">
+            <!-- Switch from buying to borrowing -->
             <div id="switch"><b>BUY</b> <a href="itemPageForRent.html">BORROW</a></div>
+            <!-- Item Details (text) -->
             <div id="details">
-                <h1 id="itemType">Item Name</h1><hr>
-                <h2><b>Listed By:</b> <span id= "itemLister">name</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                <h1 id="itemType">Item Name</h1>
+                <hr>
+                <h2><b>Listed By:</b> <span id="itemLister">name</span></h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
             </div>
             <form>
                 <fieldset>
-                    <label id= "labelSize">-Size </label>
-                    <select id= "itemSizeSelect" name="size" title="name">
-                        <!--<option value="s">Small</option>
-                        <option value="m">Medium</option>
-                        <option value="l">Large</option> -->
+                    <label id="labelSize">-Size </label>
+                    <select id="itemSizeSelect" name="size" title="name">
                     </select><br><br>
-                    <label id= "labelColor">Color: <span id= "itemColor">ColorValue</span> </label>
+                    <label id="labelColor">Color: <span id="itemColor">ColorValue</span> </label>
                 </fieldset>
                 <br><br>
-                <input type="button" name="addToCart" id="addToCart" value="Add to cart"/>
+                <input type="button" name="addToCart" id="addToCart" value="Add to cart" />
             </form>
 
-
+            <!-- Reviews to be implemented in future -->
             <div id="reviews">
                 <h1>Reviews</h1>
                 <hr>
                 <div class="review">
-                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class= "reviewerImg">
+                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class="reviewerImg">
                     <div class="nameAndReview">
-                    <h3>Name</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                     </div>
                 </div>
                 <div class="review">
-                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class= "reviewerImg">
+                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class="reviewerImg">
                     <div class="nameAndReview">
 
-                    <h3>Name</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                     </div>
                 </div>
                 <div class="review">
-                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class= "reviewerImg">
+                    <img src="https://dummyimage.com/50x50/000/fff" alt="dummyImage" class="reviewerImg">
                     <div class="nameAndReview">
 
-                    <h3>Name</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                        <h3>Name</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
                     </div>
                 </div>
             </div>
 
-        </div> 
+        </div>
 
     </div>
-    
-    <script>
 
+    <script>
         //setting every attribute of item using localStorage that passed from browser.
         var itemData = JSON.parse(localStorage.getItem("item123"));
         $("#itemType").html(itemData.type);
@@ -138,34 +146,33 @@
         $("#itemLister").html(itemData.lister);
         $("#itemColor").html(itemData.color);
         $("#itemSize").html(itemData.size);
-        $("#itemImage").attr("src",itemData.image);
+        $("#itemImage").attr("src", itemData.image);
 
 
         //adding option to size dropDown menu
         var itemSizeArray = [];
-        for(i=0; i< itemData.size.length; i++){
-            itemSizeArray[i]= document.createElement("option");
-            if(itemData.size[i]=="S"){
-            itemSizeArray[i].setAttribute("value", "s");
-            itemSizeArray[i].text = "small";
+        for (i = 0; i < itemData.size.length; i++) {
+            itemSizeArray[i] = document.createElement("option");
+            if (itemData.size[i] == "S") {
+                itemSizeArray[i].setAttribute("value", "s");
+                itemSizeArray[i].text = "small";
 
-            }
-            else if(itemData.size[i]=="L"){
-            itemSizeArray[i].setAttribute("value", "l");
-            itemSizeArray[i].text = "large";
+            } else if (itemData.size[i] == "L") {
+                itemSizeArray[i].setAttribute("value", "l");
+                itemSizeArray[i].text = "large";
 
-            }else {
-            itemSizeArray[i].setAttribute("value", "m");
-            itemSizeArray[i].text = "medium";
+            } else {
+                itemSizeArray[i].setAttribute("value", "m");
+                itemSizeArray[i].text = "medium";
 
             }
         }
         var itemSizeSelect = document.getElementById("itemSizeSelect");
-        for( i = 0; i < itemSizeArray.length; i++){
-        itemSizeSelect.appendChild(itemSizeArray[i]);
+        for (i = 0; i < itemSizeArray.length; i++) {
+            itemSizeSelect.appendChild(itemSizeArray[i]);
         }
-        
-        $("#addToCart").click(function(){
+
+        $("#addToCart").click(function() {
             //go back to browser page and add to cart.(local storage)
             let cart = JSON.parse(localStorage.getItem("cart"));
             cart.push(itemData);
@@ -173,22 +180,10 @@
             location.replace("browse.html");
         });
 
-        /*
-        item.price
-        item.color
-        item.type
-        item.size
-        item.tag
-        item.lister
-        item.image
-        */
-        
-
     </script>
 
     <script type="text/javascript">
-        
+
     </script>
 
-</body>
-</html>
+</body></html>

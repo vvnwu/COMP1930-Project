@@ -1,79 +1,90 @@
+<!--Firebase Login Screen-->
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
-          <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-          <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
-        <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
-        <script src= "../js/Firebase_calls.js"></script>
-        
-        <style>
-            #firebaseui-auth-container{
-                margin: 0 auto;
-                
-            }
-            #logoContainer{
-                height: 250px;
-                width:inherit;
-                text-align: center;
-            }
-            #logoContainer > img {
-                height:300px;
-                width: 300px;
-                display: inline-block;
-               
-            }
-            body{
-                background-image: url("https://images.unsplash.com/photo-1531647194831-57150369fd00?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80");
-                background-repeat:round;
-            }
-        </style>
-    </head>
-    <body>
-        <script>
-		// Initialize the FirebaseUI Widget using Firebase.
-		var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        
+    <title>Login</title>
+    <!--Load Firebase Initialization--> 
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
+    <script src="../js/Firebase_calls.js"></script>
+    
+    <!-- Login page styling -->
+    <style>
+        #firebaseui-auth-container {
+            margin: 0 auto;
+
+        }
+
+        #logoContainer {
+            height: 250px;
+            width: inherit;
+            text-align: center;
+        }
+
+        #logoContainer>img {
+            height: 300px;
+            width: 300px;
+            display: inline-block;
+
+        }
+
+        body {
+            background-image: url("https://images.unsplash.com/photo-1469329989238-48310798c014?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80");
+            
+            background-size:cover;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Call firebase login -->
+    <script>
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
         var uiConfig = {
-          callbacks: {
-            signInSuccessWithAuthResult: function(authResult, redirectUrl) {
-              // User successfully signed in.
-              // Return type determines whether we continue the redirect automatically
-              // or whether we leave that to developer to handle.
-              return true;
+            callbacks: {
+                signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+                    // User successfully signed in.
+                    // Return type determines whether we continue the redirect automatically
+                    // or whether we leave that to developer to handle.
+                    return true;
+                },
+                uiShown: function() {
+                    // The widget is rendered.
+                    // Hide the loader.
+                    document.getElementById('loader').style.display = 'none';
+                }
             },
-            uiShown: function() {
-              // The widget is rendered.
-              // Hide the loader.
-              document.getElementById('loader').style.display = 'none';
-            }
-          },
-          // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
-          signInFlow: 'popup',
-          signInSuccessUrl: 'browse.html',
-          signInOptions: [
-            // Leave the lines as is for the providers you want to offer your users.
-            /*firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-            firebase.auth.GithubAuthProvider.PROVIDER_ID,*/
-            firebase.auth.EmailAuthProvider.PROVIDER_ID//,
-            //firebase.auth.PhoneAuthProvider.PROVIDER_ID
-          ],
-          // Terms of service url.
-          tosUrl: 'main.html',
-          // Privacy policy url.
-          privacyPolicyUrl: 'main.html'
+            // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+            signInFlow: 'popup',
+            signInSuccessUrl: 'browse.html',
+            signInOptions: [
+                // Leave the lines as is for the providers you want to offer your users.
+                /*firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+                firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+                firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+                firebase.auth.GithubAuthProvider.PROVIDER_ID,*/
+                firebase.auth.EmailAuthProvider.PROVIDER_ID //,
+                //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+            ],
+            // Terms of service url.
+            tosUrl: 'main.html',
+            // Privacy policy url.
+            privacyPolicyUrl: 'main.html'
         };
-        
-            // The start method will wait until the DOM is loaded.
-            ui.start('#firebaseui-auth-container', uiConfig);
-	</script>
-        <div id="logoContainer">
-            <img src = "logo.svg"/>
-        </div>
-        <div id="firebaseui-auth-container"></div>
-        <div id="loader">Loading...</div>
-        
-    </body>
-</html>
+
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+    
+    <!-- Display -->
+    <div id="logoContainer">
+        <img src="logo.svg" />
+    </div>
+    <div id="firebaseui-auth-container"></div>
+    <div id="loader">Loading...</div>
+
+</body></html>
