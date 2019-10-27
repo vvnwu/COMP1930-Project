@@ -5,6 +5,7 @@ We are students of BCIT CST 2019 Winter term. Eco Exchange is our COMP 1930 proj
 ## Deployment
 
 This application was deployed with Google Firebase.
+https://comp1930-project-33dd7.firebaseapp.com/
 
 ## Tools Used
 
